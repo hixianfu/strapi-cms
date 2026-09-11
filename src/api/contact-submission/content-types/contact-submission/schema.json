@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_submissions",
+  "info": {
+    "singularName": "contact-submission",
+    "pluralName": "contact-submissions",
+    "displayName": "Contact submission",
+    "description": "Inbound contact requests submitted from the public website."
+  },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {},
+  "attributes": {
+    "name": { "type": "string", "required": true, "maxLength": 120 },
+    "email": { "type": "email", "required": true, "maxLength": 160 },
+    "company": { "type": "string", "maxLength": 160 },
+    "phone": { "type": "string", "maxLength": 80 },
+    "message": { "type": "text", "required": true, "maxLength": 5000 },
+    "sourcePage": { "type": "string", "required": true, "maxLength": 500 },
+    "status": {
+      "type": "enumeration",
+      "enum": ["pending", "in_progress", "resolved", "spam", "archived"],
+      "default": "pending",
+      "required": true
+    }
+  }
+}

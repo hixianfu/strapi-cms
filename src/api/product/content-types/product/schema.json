@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": "Manage products displayed on the corporate website."
+  },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": {},
+  "attributes": {
+    "name": { "type": "string", "required": true, "maxLength": 160 },
+    "slug": { "type": "uid", "targetField": "name", "required": true },
+    "summary": { "type": "text", "required": true, "maxLength": 500 },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": ["shared.rich-text", "shared.feature-list", "shared.media-gallery", "shared.cta"]
+    },
+    "cover": { "type": "media", "multiple": false, "required": true, "allowedTypes": ["images"] },
+    "gallery": { "type": "media", "multiple": true, "required": false, "allowedTypes": ["images"] },
+    "specifications": { "type": "component", "repeatable": true, "component": "shared.specification" },
+    "documents": { "type": "media", "multiple": true, "required": false, "allowedTypes": ["files"] },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-category.product-category",
+      "inversedBy": "products"
+    },
+    "sortOrder": { "type": "integer", "default": 0, "min": 0, "max": 2147483647 },
+    "featured": { "type": "boolean", "default": false },
+    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
+  }
+}
