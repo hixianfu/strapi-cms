@@ -3,7 +3,8 @@
 const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
-const { categories, authors, articles, global, about } = require('../data/data.json');
+const seed = require('../data/data.json');
+const { categories, productCategories = [], authors, articles, products = [], global, homePage, about, contactPage } = seed;
 
 async function seedExampleApp() {
   const shouldImportSeedData = await isFirstRun();
@@ -101,7 +102,7 @@ async function uploadFile(file, name) {
 async function createEntry({ model, entry }) {
   try {
     // Actually create the entry in Strapi
-    await strapi.documents(`api::${model}.${model}`).create({
+    return await strapi.documents(`api::${model}.${model}`).create({
       data: entry,
     });
   } catch (error) {
@@ -166,6 +167,16 @@ async function updateBlocks(blocks) {
   return updatedBlocks;
 }
 
+async function updateMediaFields(entry, fields) {
+  const copy = { ...entry };
+  for (const field of fields) {
+    if (!copy[field]) continue;
+    const files = Array.isArray(copy[field]) ? copy[field] : [copy[field]];
+    copy[field] = await checkFileExistsBeforeUpload(files);
+  }
+  return copy;
+}
+
 async function importArticles() {
   for (const article of articles) {
     const cover = await checkFileExistsBeforeUpload([`${article.slug}.jpg`]);
@@ -202,13 +213,26 @@ async function importGlobal() {
   });
 }
 
+async function importHomePage() {
+  if (!homePage) return;
+  const heroSlides = [];
+  for (const slide of homePage.heroSlides || []) {
+    const image = await checkFileExistsBeforeUpload([slide.image]);
+    heroSlides.push({ ...slide, image });
+  }
+  const cta = homePage.cta ? { ...homePage.cta } : undefined;
+  if (cta?.image) cta.image = await checkFileExistsBeforeUpload([cta.image]);
+  await createEntry({ model: 'home-page', entry: { ...homePage, heroSlides, cta } });
+}
+
 async function importAbout() {
   const updatedBlocks = await updateBlocks(about.blocks);
+  const aboutEntry = await updateMediaFields(about, ['cover']);
 
   await createEntry({
     model: 'about',
     entry: {
-      ...about,
+      ...aboutEntry,
       blocks: updatedBlocks,
       // Make sure it's not a draft
       publishedAt: Date.now(),
@@ -216,9 +240,34 @@ async function importAbout() {
   });
 }
 
+async function importContactPage() {
+  if (!contactPage) return;
+  await createEntry({ model: 'contact-page', entry: { ...contactPage, publishedAt: Date.now() } });
+}
+
 async function importCategories() {
   for (const category of categories) {
     await createEntry({ model: 'category', entry: category });
+  }
+}
+
+async function importProductCategories() {
+  const created = {};
+  for (const category of productCategories) {
+    const result = await createEntry({ model: 'product-category', entry: category });
+    if (result?.slug) created[result.slug] = result;
+  }
+  return created;
+}
+
+async function importProducts(categoryMap) {
+  for (const product of products) {
+    const entry = await updateMediaFields(product, ['cover', 'gallery', 'documents']);
+    if (entry.blocks) entry.blocks = await updateBlocks(entry.blocks);
+    const category = entry.categorySlug && categoryMap[entry.categorySlug];
+    delete entry.categorySlug;
+    if (category) entry.category = { connect: [category.documentId || category.id] };
+    await createEntry({ model: 'product', entry: { ...entry, publishedAt: Date.now() } });
   }
 }
 
@@ -244,6 +293,10 @@ async function importSeedData() {
     author: ['find', 'findOne'],
     global: ['find', 'findOne'],
     about: ['find', 'findOne'],
+    'home-page': ['find', 'findOne'],
+    'contact-page': ['find', 'findOne'],
+    'product-category': ['find', 'findOne'],
+    product: ['find', 'findOne'],
   });
 
   // Create all entries
@@ -251,7 +304,11 @@ async function importSeedData() {
   await importAuthors();
   await importArticles();
   await importGlobal();
+  await importHomePage();
   await importAbout();
+  await importContactPage();
+  const productCategoryMap = await importProductCategories();
+  await importProducts(productCategoryMap);
 }
 
 async function main() {

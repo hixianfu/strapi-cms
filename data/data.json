@@ -1,14 +1,54 @@
 {
   "global": {
-    "siteName": "Strapi Blog",
+    "siteName": "Northstar Systems",
     "defaultSeo": {
-      "metaTitle": "Page",
-      "metaDescription": "A blog made with Strapi",
+      "metaTitle": "Northstar Systems | Industrial technology",
+      "metaDescription": "Reliable automation and monitoring systems for modern operations.",
       "shareImage": null
     },
-    "siteDescription": "A Blog made with Strapi",
-    "favicon": null
+    "siteDescription": "Industrial automation and monitoring systems for modern operations.",
+    "favicon": null,
+    "logoAlt": "Northstar Systems",
+    "navigation": [
+      { "label": "About", "url": "/about" },
+      { "label": "Products", "url": "/products" },
+      { "label": "Blog", "url": "/blog" },
+      { "label": "Contact", "url": "/contact" }
+    ],
+    "footerText": "Northstar Systems helps teams operate safer, smarter, and with less downtime.",
+    "footerLinks": [{ "label": "Privacy", "url": "/privacy" }],
+    "socialLinks": [{ "platform": "LinkedIn", "url": "https://www.linkedin.com/company/northstar-systems" }]
   },
+  "homePage": {
+    "heroSlides": [
+      { "eyebrow": "Operational confidence", "title": "Make every critical process visible", "description": "Northstar connects field data, automation, and insight so your teams can act before issues become downtime.", "image": "coffee-shadow.jpg", "imageAlt": "Control room operator reviewing system data", "linkLabel": "Explore products", "linkUrl": "/products" },
+      { "eyebrow": "Built for demanding teams", "title": "Systems that keep work moving", "description": "From plant-floor monitoring to remote asset health, our platform scales with your operation.", "image": "coffee-art.jpg", "imageAlt": "Engineering team collaborating around a technical system", "linkLabel": "Meet Northstar", "linkUrl": "/about" }
+    ],
+    "introTitle": "Technology with a clear purpose",
+    "intro": "We design dependable tools for teams that cannot afford blind spots.",
+    "featureSections": [{ "title": "Why teams choose Northstar", "description": "Practical innovation, measured outcomes, and support from people who understand operations.", "items": [{ "title": "Dependable by design", "description": "Robust systems and transparent status at every step.", "icon": "shield" }, { "title": "Ready to integrate", "description": "Connect existing equipment and workflows without a disruptive rebuild.", "icon": "plug" }, { "title": "Actionable insight", "description": "Turn live signals into decisions your teams can trust.", "icon": "chart" }] }],
+    "featuredProductsTitle": "Products for the real world",
+    "featuredArticlesTitle": "From the field",
+    "cta": { "title": "Ready to see what is possible?", "description": "Talk with an engineer about your next operational challenge.", "label": "Contact our team", "url": "/contact" }
+  },
+  "contactPage": {
+    "title": "Let us solve the hard part together",
+    "intro": "Tell us what you are building, improving, or trying to understand. Our team will respond within one business day.",
+    "address": "88 Meridian Avenue, Shanghai",
+    "phone": "+86 21 5555 0188",
+    "email": "hello@northstar.example",
+    "officeHours": "Monday-Friday, 09:00-18:00 (CST)",
+    "formTitle": "Start a conversation",
+    "formIntro": "Share a few details and we will route your message to the right specialist."
+  },
+  "productCategories": [
+    { "name": "Monitoring", "slug": "monitoring", "description": "Real-time visibility for critical assets.", "sortOrder": 1 },
+    { "name": "Automation", "slug": "automation", "description": "Control systems that reduce manual work.", "sortOrder": 2 }
+  ],
+  "products": [
+    { "name": "Northstar Pulse", "slug": "northstar-pulse", "summary": "A unified monitoring gateway for distributed equipment and facilities.", "cover": "coffee-shadow.jpg", "gallery": ["coffee-shadow.jpg", "coffee-art.jpg"], "specifications": [{ "label": "Connectivity", "value": "MQTT, OPC-UA, REST" }, { "label": "Deployment", "value": "Cloud or private network" }, { "label": "Alert latency", "value": "Under 60 seconds" }], "categorySlug": "monitoring", "sortOrder": 1, "featured": true, "blocks": [{ "__component": "shared.rich-text", "body": "## See the signal that matters\n\nPulse brings equipment health, alerts, and trends into one calm operational view." }], "seo": { "metaTitle": "Northstar Pulse monitoring gateway", "metaDescription": "Monitor distributed equipment with Northstar Pulse." } },
+    { "name": "Northstar Flow", "slug": "northstar-flow", "summary": "A flexible automation controller for repeatable, safer workflows.", "cover": "we-love-pizza.jpg", "gallery": ["we-love-pizza.jpg", "coffee-beans.jpg"], "specifications": [{ "label": "Control loops", "value": "Up to 128" }, { "label": "Protocols", "value": "Modbus, OPC-UA, Ethernet/IP" }, { "label": "Audit trail", "value": "Included" }], "categorySlug": "automation", "sortOrder": 2, "featured": true, "blocks": [{ "__component": "shared.rich-text", "body": "## Automate with confidence\n\nFlow helps teams standardize critical sequences while keeping operators in control." }], "seo": { "metaTitle": "Northstar Flow automation controller", "metaDescription": "Build safer, repeatable workflows with Northstar Flow." } }
+  ],
   "about": {
     "title": "About the strapi blog",
     "blocks": [
