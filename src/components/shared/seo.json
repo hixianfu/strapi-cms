@@ -21,6 +21,16 @@
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"]
+    },
+    "shareImageAlt": {
+      "type": "string",
+      "required": false,
+      "maxLength": 160
+    },
+    "canonicalUrl": {
+      "type": "string",
+      "required": false,
+      "maxLength": 500
     }
   }
 }

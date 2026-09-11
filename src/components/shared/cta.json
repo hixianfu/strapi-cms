@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_ctas",
+  "info": { "displayName": "Call to action", "icon": "arrowRight" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true, "maxLength": 160 },
+    "description": { "type": "text", "maxLength": 500 },
+    "label": { "type": "string", "required": true, "maxLength": 80 },
+    "url": { "type": "string", "required": true, "maxLength": 500 },
+    "image": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "imageAlt": { "type": "string", "maxLength": 160 }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_navigation_items",
+  "info": { "displayName": "Navigation item", "icon": "link" },
+  "options": {},
+  "attributes": {
+    "label": { "type": "string", "required": true, "maxLength": 80 },
+    "url": { "type": "string", "required": true, "maxLength": 500 },
+    "openInNewTab": { "type": "boolean", "default": false }
+  }
+}

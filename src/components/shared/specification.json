@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_shared_specifications",
+  "info": { "displayName": "Specification", "icon": "dashboard" },
+  "options": {},
+  "attributes": {
+    "label": { "type": "string", "required": true, "maxLength": 120 },
+    "value": { "type": "string", "required": true, "maxLength": 300 }
+  }
+}

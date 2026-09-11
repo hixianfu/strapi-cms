@@ -8,16 +8,21 @@
     "description": "Write about yourself and the content you create"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 160
     },
+    "cover": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "coverAlt": { "type": "string", "maxLength": 160 },
     "blocks": {
       "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
-    }
+      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider", "shared.feature-list", "shared.timeline-item", "shared.media-gallery", "shared.cta"]
+    },
+    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
   }
 }

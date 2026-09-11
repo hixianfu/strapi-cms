@@ -1,0 +1,17 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": { "singularName": "home-page", "pluralName": "home-pages", "displayName": "Home page", "description": "Manage homepage content." },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": {},
+  "attributes": {
+    "heroSlides": { "type": "component", "repeatable": true, "required": true, "component": "shared.hero-slide", "min": 1, "max": 8 },
+    "introTitle": { "type": "string", "maxLength": 160 },
+    "intro": { "type": "text", "maxLength": 1000 },
+    "featureSections": { "type": "component", "repeatable": true, "component": "shared.feature-list", "max": 6 },
+    "featuredProductsTitle": { "type": "string", "maxLength": 160 },
+    "featuredArticlesTitle": { "type": "string", "maxLength": 160 },
+    "cta": { "type": "component", "repeatable": false, "component": "shared.cta" },
+    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
+  }
+}

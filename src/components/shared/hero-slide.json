@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_hero_slides",
+  "info": {
+    "displayName": "Hero slide",
+    "icon": "picture",
+    "description": "A homepage carousel slide with an optional call to action."
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": { "type": "string", "maxLength": 80 },
+    "title": { "type": "string", "required": true, "maxLength": 160 },
+    "description": { "type": "text", "maxLength": 500 },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "imageAlt": { "type": "string", "required": true, "maxLength": 160 },
+    "linkLabel": { "type": "string", "maxLength": 80 },
+    "linkUrl": { "type": "string", "maxLength": 500 }
+  }
+}

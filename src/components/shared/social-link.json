@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_shared_social_links",
+  "info": { "displayName": "Social link", "icon": "share" },
+  "options": {},
+  "attributes": {
+    "platform": { "type": "string", "required": true, "maxLength": 80 },
+    "url": { "type": "string", "required": true, "maxLength": 500 }
+  }
+}

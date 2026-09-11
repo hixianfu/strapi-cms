@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_timeline_items",
+  "info": { "displayName": "Timeline item", "icon": "clock" },
+  "options": {},
+  "attributes": {
+    "date": { "type": "date", "required": true },
+    "title": { "type": "string", "required": true, "maxLength": 160 },
+    "description": { "type": "text", "maxLength": 500 },
+    "image": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "imageAlt": { "type": "string", "maxLength": 160 }
+  }
+}

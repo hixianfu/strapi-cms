@@ -22,6 +22,12 @@
       "required": false,
       "allowedTypes": ["images", "files", "videos"]
     },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "logoAlt": { "type": "string", "maxLength": 160 },
     "siteDescription": {
       "type": "text",
       "required": true
@@ -30,6 +36,25 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "navigation": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.navigation-item",
+      "max": 12
+    },
+    "footerText": { "type": "text", "maxLength": 1000 },
+    "footerLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.navigation-item",
+      "max": 20
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.social-link",
+      "max": 10
     }
   }
 }

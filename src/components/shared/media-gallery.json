@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_media_galleries",
+  "info": { "displayName": "Media gallery", "icon": "landscape" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "maxLength": 160 },
+    "images": { "type": "media", "multiple": true, "required": true, "allowedTypes": ["images"], "min": 1, "max": 20 },
+    "altText": { "type": "string", "required": true, "maxLength": 160 }
+  }
+}

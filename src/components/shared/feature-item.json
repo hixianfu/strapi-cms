@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_feature_items",
+  "info": { "displayName": "Feature item", "icon": "star" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true, "maxLength": 120 },
+    "description": { "type": "text", "maxLength": 400 },
+    "icon": { "type": "string", "maxLength": 80 }
+  }
+}

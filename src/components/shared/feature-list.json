@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_shared_feature_lists",
+  "info": { "displayName": "Feature list", "icon": "bulletList" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true, "maxLength": 160 },
+    "description": { "type": "text", "maxLength": 500 },
+    "items": { "type": "component", "repeatable": true, "required": true, "component": "shared.feature-item", "min": 1, "max": 12 }
+  }
+}
