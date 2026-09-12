@@ -20,6 +20,7 @@
     },
     "cover": { "type": "media", "multiple": false, "required": true, "allowedTypes": ["images"] },
     "gallery": { "type": "media", "multiple": true, "required": false, "allowedTypes": ["images"] },
+    "videos": { "type": "media", "multiple": true, "required": false, "allowedTypes": ["videos"] },
     "specifications": { "type": "component", "repeatable": true, "component": "shared.specification" },
     "documents": { "type": "media", "multiple": true, "required": false, "allowedTypes": ["files"] },
     "category": {
@@ -27,6 +28,12 @@
       "relation": "manyToOne",
       "target": "api::product-category.product-category",
       "inversedBy": "products"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article",
+      "mappedBy": "products"
     },
     "sortOrder": { "type": "integer", "default": 0, "min": 0, "max": 2147483647 },
     "featured": { "type": "boolean", "default": false },
