@@ -14,6 +14,7 @@
     "content:ensure-about": "node ./scripts/ensure-about.js",
     "content:ensure-contact": "node ./scripts/ensure-contact-page.js",
     "content:create-test-products": "node ./scripts/create-test-products.js",
+    "content:create-ameson-categories": "node ./scripts/create-ameson-categories.js",
     "content:create-english-test-content": "node ./scripts/create-english-test-content.js",
     "content:backfill-locales": "node ./scripts/backfill-locales.js",
     "start": "strapi start",
