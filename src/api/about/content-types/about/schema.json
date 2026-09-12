@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "abouts",
   "info": {
     "singularName": "about",
@@ -12,6 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
     "title": {
       "type": "string",
       "required": true,
