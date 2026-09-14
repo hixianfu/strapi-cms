@@ -443,7 +443,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAboutAbout extends Struct.SingleTypeSchema {
+export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
   collectionName: 'abouts';
   info: {
     description: 'Write about yourself and the content you create';
@@ -467,6 +467,9 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
         'shared.cta',
       ]
     >;
+    contentLocale: Schema.Attribute.Enumeration<['zh', 'en']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'zh'>;
     cover: Schema.Attribute.Media<'images'>;
     coverAlt: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
@@ -525,6 +528,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'api::article.article'
     > &
       Schema.Attribute.Private;
+    products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
@@ -604,7 +608,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
+export interface ApiContactPageContactPage extends Struct.CollectionTypeSchema {
   collectionName: 'contact_pages';
   info: {
     description: 'Manage contact information and form copy.';
@@ -620,6 +624,9 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 500;
       }>;
+    contentLocale: Schema.Attribute.Enumeration<['zh', 'en']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'zh'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -866,6 +873,10 @@ export interface ApiProductCategoryProductCategory
     draftAndPublish: true;
   };
   attributes: {
+    children: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-category.product-category'
+    >;
     contentLocale: Schema.Attribute.Enumeration<['zh', 'en']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'zh'>;
@@ -887,6 +898,10 @@ export interface ApiProductCategoryProductCategory
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 120;
       }>;
+    parent: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::product-category.product-category'
+    >;
     products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
@@ -917,6 +932,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    articles: Schema.Attribute.Relation<'manyToMany', 'api::article.article'>;
     blocks: Schema.Attribute.DynamicZone<
       [
         'shared.rich-text',
@@ -971,6 +987,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    videos: Schema.Attribute.Media<'videos', true>;
   };
 }
 
