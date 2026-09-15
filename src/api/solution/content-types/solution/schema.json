@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solutions",
+  "info": { "singularName": "solution", "pluralName": "solutions", "displayName": "Solution", "description": "Industry and customer-need based packaging solutions." },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": {},
+  "attributes": {
+    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
+    "title": { "type": "string", "required": true, "maxLength": 160 },
+    "slug": { "type": "uid", "targetField": "title", "required": true },
+    "summary": { "type": "text", "required": true, "maxLength": 500 },
+    "industry": { "type": "string", "maxLength": 120 },
+    "customerPain": { "type": "text", "maxLength": 2000 },
+    "packagingNeeds": { "type": "text", "maxLength": 2000 },
+    "content": { "type": "richtext" },
+    "cover": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "gallery": { "type": "media", "multiple": true, "allowedTypes": ["images"] },
+    "products": { "type": "relation", "relation": "manyToMany", "target": "api::product.product" },
+    "scenarios": { "type": "relation", "relation": "manyToMany", "target": "api::scenario.scenario" },
+    "cases": { "type": "relation", "relation": "manyToMany", "target": "api::case-study.case-study" },
+    "videos": { "type": "relation", "relation": "manyToMany", "target": "api::video.video" },
+    "articles": { "type": "relation", "relation": "manyToMany", "target": "api::article.article" },
+    "sortOrder": { "type": "integer", "default": 0, "min": 0 },
+    "featured": { "type": "boolean", "default": false },
+    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
+  }
+}

@@ -183,6 +183,32 @@ export interface SharedNavigationItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedProductVideo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_product_videos';
+  info: {
+    description: 'A titled video shown on a product detail page.';
+    displayName: 'Product Video';
+    icon: 'play';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }>;
+    kind: Schema.Attribute.Enumeration<
+      ['promotional', 'operation', 'maintenance', 'other']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'promotional'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    video: Schema.Attribute.Media<'videos'> & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -317,6 +343,7 @@ declare module '@strapi/strapi' {
       'shared.media': SharedMedia;
       'shared.media-gallery': SharedMediaGallery;
       'shared.navigation-item': SharedNavigationItem;
+      'shared.product-video': SharedProductVideo;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;

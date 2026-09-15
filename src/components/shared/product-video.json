@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_product_videos",
+  "info": {
+    "displayName": "Product Video",
+    "description": "A titled video shown on a product detail page.",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 160
+    },
+    "kind": {
+      "type": "enumeration",
+      "enum": ["promotional", "operation", "maintenance", "other"],
+      "default": "promotional",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false,
+      "maxLength": 500
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["videos"]
+    }
+  }
+}

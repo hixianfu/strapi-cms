@@ -297,6 +297,11 @@ async function importSeedData() {
     'contact-page': ['find', 'findOne'],
     'product-category': ['find', 'findOne'],
     product: ['find', 'findOne'],
+    solution: ['find', 'findOne'],
+    scenario: ['find', 'findOne'],
+    'case-study': ['find', 'findOne'],
+    video: ['find', 'findOne'],
+    faq: ['find', 'findOne'],
   });
 
   // Create all entries

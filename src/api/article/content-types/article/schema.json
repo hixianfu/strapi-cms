@@ -48,6 +48,10 @@
       "target": "api::product.product",
       "inversedBy": "articles"
     },
+    "solutions": { "type": "relation", "relation": "manyToMany", "target": "api::solution.solution" },
+    "scenarios": { "type": "relation", "relation": "manyToMany", "target": "api::scenario.scenario" },
+    "cases": { "type": "relation", "relation": "manyToMany", "target": "api::case-study.case-study" },
+    "videos": { "type": "relation", "relation": "manyToMany", "target": "api::video.video" },
     "blocks": {
       "type": "dynamiczone",
       "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]

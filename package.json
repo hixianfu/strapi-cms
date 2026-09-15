@@ -19,6 +19,8 @@
     "content:create-subproduct-category-locales": "node ./scripts/create-subproduct-category-locales.js",
     "content:create-localized-pages": "node ./scripts/create-localized-pages.js",
     "content:create-english-test-content": "node ./scripts/create-english-test-content.js",
+    "content:ensure-article-categories": "node ./scripts/ensure-article-categories.js",
+    "content:seed-marketing": "node ./scripts/seed-marketing-content.js",
     "content:backfill-locales": "node ./scripts/backfill-locales.js",
     "start": "strapi start",
     "strapi": "strapi",

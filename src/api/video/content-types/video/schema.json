@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "videos",
+  "info": { "singularName": "video", "pluralName": "videos", "displayName": "Video", "description": "Central video library with uploads or external embeds." },
+  "options": { "draftAndPublish": true },
+  "pluginOptions": {},
+  "attributes": {
+    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
+    "title": { "type": "string", "required": true, "maxLength": 160 },
+    "slug": { "type": "uid", "targetField": "title", "required": true },
+    "description": { "type": "text", "maxLength": 500 },
+    "category": { "type": "enumeration", "enum": ["promotional", "introduction", "operation", "installation", "tutorial", "commissioning", "maintenance", "application", "factory", "company"], "default": "promotional", "required": true },
+    "cover": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "file": { "type": "media", "multiple": false, "allowedTypes": ["videos"] },
+    "externalUrl": { "type": "string", "maxLength": 1000 },
+    "products": { "type": "relation", "relation": "manyToMany", "target": "api::product.product" },
+    "solutions": { "type": "relation", "relation": "manyToMany", "target": "api::solution.solution" },
+    "scenarios": { "type": "relation", "relation": "manyToMany", "target": "api::scenario.scenario" },
+    "cases": { "type": "relation", "relation": "manyToMany", "target": "api::case-study.case-study" },
+    "articles": { "type": "relation", "relation": "manyToMany", "target": "api::article.article" },
+    "sortOrder": { "type": "integer", "default": 0, "min": 0 },
+    "featured": { "type": "boolean", "default": false },
+    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
+  }
+}
