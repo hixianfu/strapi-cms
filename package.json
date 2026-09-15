@@ -21,6 +21,7 @@
     "content:create-english-test-content": "node ./scripts/create-english-test-content.js",
     "content:ensure-article-categories": "node ./scripts/ensure-article-categories.js",
     "content:seed-marketing": "node ./scripts/seed-marketing-content.js",
+    "content:create-test-case-studies": "node ./scripts/create-test-case-studies.js",
     "content:backfill-locales": "node ./scripts/backfill-locales.js",
     "start": "strapi start",
     "strapi": "strapi",
