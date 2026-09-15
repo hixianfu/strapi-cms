@@ -969,10 +969,24 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
+    featuredCases: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::case-study.case-study'
+    >;
+    featuredFaqs: Schema.Attribute.Relation<'manyToMany', 'api::faq.faq'>;
     featuredProductsTitle: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
+    featuredScenarios: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::scenario.scenario'
+    >;
+    featuredSolutions: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::solution.solution'
+    >;
+    featuredVideos: Schema.Attribute.Relation<'manyToMany', 'api::video.video'>;
     featureSections: Schema.Attribute.Component<'shared.feature-list', true> &
       Schema.Attribute.SetMinMax<
         {
