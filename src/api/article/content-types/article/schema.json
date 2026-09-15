@@ -52,6 +52,7 @@
     "scenarios": { "type": "relation", "relation": "manyToMany", "target": "api::scenario.scenario" },
     "cases": { "type": "relation", "relation": "manyToMany", "target": "api::case-study.case-study" },
     "videos": { "type": "relation", "relation": "manyToMany", "target": "api::video.video" },
+    "faqs": { "type": "relation", "relation": "manyToMany", "target": "api::faq.faq" },
     "blocks": {
       "type": "dynamiczone",
       "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
