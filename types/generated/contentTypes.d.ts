@@ -965,6 +965,10 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     cta: Schema.Attribute.Component<'shared.cta', false>;
+    featuredArticles: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::article.article'
+    >;
     featuredArticlesTitle: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
@@ -974,6 +978,10 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'api::case-study.case-study'
     >;
     featuredFaqs: Schema.Attribute.Relation<'manyToMany', 'api::faq.faq'>;
+    featuredProducts: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::product.product'
+    >;
     featuredProductsTitle: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;

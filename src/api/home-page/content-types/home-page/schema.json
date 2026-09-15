@@ -11,6 +11,8 @@
     "featureSections": { "type": "component", "repeatable": true, "component": "shared.feature-list", "max": 6 },
     "featuredProductsTitle": { "type": "string", "maxLength": 160 },
     "featuredArticlesTitle": { "type": "string", "maxLength": 160 },
+    "featuredProducts": { "type": "relation", "relation": "manyToMany", "target": "api::product.product" },
+    "featuredArticles": { "type": "relation", "relation": "manyToMany", "target": "api::article.article" },
     "featuredSolutions": { "type": "relation", "relation": "manyToMany", "target": "api::solution.solution" },
     "featuredScenarios": { "type": "relation", "relation": "manyToMany", "target": "api::scenario.scenario" },
     "featuredCases": { "type": "relation", "relation": "manyToMany", "target": "api::case-study.case-study" },
