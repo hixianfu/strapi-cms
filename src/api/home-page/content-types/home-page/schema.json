@@ -17,7 +17,8 @@
         "shared.home-scenarios",
         "shared.home-cases",
         "shared.home-videos",
-        "shared.home-faqs"
+        "shared.home-faqs",
+        "shared.home-feature-cards"
       ],
       "max": 12
     },

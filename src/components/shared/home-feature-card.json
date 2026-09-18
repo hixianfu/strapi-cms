@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_home_feature_cards",
+  "info": { "displayName": "Home feature card", "icon": "star" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true, "maxLength": 160 },
+    "description": { "type": "text", "maxLength": 500 },
+    "image": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "targetType": { "type": "enumeration", "required": true, "enum": ["product", "article", "solution", "scenario", "case"] },
+    "product": { "type": "relation", "relation": "manyToOne", "target": "api::product.product" },
+    "article": { "type": "relation", "relation": "manyToOne", "target": "api::article.article" },
+    "solution": { "type": "relation", "relation": "manyToOne", "target": "api::solution.solution" },
+    "scenario": { "type": "relation", "relation": "manyToOne", "target": "api::scenario.scenario" },
+    "case": { "type": "relation", "relation": "manyToOne", "target": "api::case-study.case-study" }
+  }
+}

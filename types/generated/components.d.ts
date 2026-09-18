@@ -171,6 +171,63 @@ export interface SharedHomeFaqs extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHomeFeatureCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_feature_cards';
+  info: {
+    displayName: 'Home feature card';
+    icon: 'star';
+  };
+  attributes: {
+    article: Schema.Attribute.Relation<'manyToOne', 'api::article.article'>;
+    case: Schema.Attribute.Relation<'manyToOne', 'api::case-study.case-study'>;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }>;
+    image: Schema.Attribute.Media<'images'>;
+    product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
+    scenario: Schema.Attribute.Relation<'manyToOne', 'api::scenario.scenario'>;
+    solution: Schema.Attribute.Relation<'manyToOne', 'api::solution.solution'>;
+    targetType: Schema.Attribute.Enumeration<
+      ['product', 'article', 'solution', 'scenario', 'case']
+    > &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+  };
+}
+
+export interface SharedHomeFeatureCards extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_feature_cards_sections';
+  info: {
+    displayName: 'Home feature cards';
+    icon: 'grid';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'shared.home-feature-card', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 8;
+          min: 1;
+        },
+        number
+      >;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+  };
+}
+
 export interface SharedHomeHero extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_heroes';
   info: {
@@ -476,6 +533,8 @@ declare module '@strapi/strapi' {
       'shared.home-articles': SharedHomeArticles;
       'shared.home-cases': SharedHomeCases;
       'shared.home-faqs': SharedHomeFaqs;
+      'shared.home-feature-card': SharedHomeFeatureCard;
+      'shared.home-feature-cards': SharedHomeFeatureCards;
       'shared.home-hero': SharedHomeHero;
       'shared.home-products': SharedHomeProducts;
       'shared.home-scenarios': SharedHomeScenarios;

@@ -1045,6 +1045,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'shared.home-cases',
         'shared.home-videos',
         'shared.home-faqs',
+        'shared.home-feature-cards',
       ]
     > &
       Schema.Attribute.SetMinMax<
