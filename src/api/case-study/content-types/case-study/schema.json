@@ -9,6 +9,7 @@
     "title": { "type": "string", "required": true, "maxLength": 160 },
     "slug": { "type": "uid", "targetField": "title", "required": true },
     "summary": { "type": "text", "required": true, "maxLength": 500 },
+    "category": { "type": "relation", "relation": "manyToOne", "target": "api::case-category.case-category", "inversedBy": "cases" },
     "industry": { "type": "string", "maxLength": 120 },
     "customerProblem": { "type": "text", "maxLength": 2000 },
     "originalPackaging": { "type": "text", "maxLength": 2000 },

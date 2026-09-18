@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_home_heroes",
+  "info": { "displayName": "Homepage hero", "icon": "picture" },
+  "options": {},
+  "attributes": {
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "shared.hero-slide",
+      "min": 1,
+      "max": 8
+    }
+  }
+}

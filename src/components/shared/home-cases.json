@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_shared_home_cases",
+  "info": { "displayName": "Homepage cases", "icon": "chartBubble" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "maxLength": 160 },
+    "cases": { "type": "relation", "relation": "manyToMany", "target": "api::case-study.case-study" }
+  }
+}

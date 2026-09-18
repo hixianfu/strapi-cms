@@ -1,0 +1,15 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scenario_categories",
+  "info": { "singularName": "scenario-category", "pluralName": "scenario-categories", "displayName": "Application scenario category", "description": "Organize application scenarios into categories." },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {},
+  "attributes": {
+    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
+    "name": { "type": "string", "required": true, "maxLength": 120 },
+    "slug": { "type": "uid", "targetField": "name", "required": true },
+    "description": { "type": "text", "maxLength": 500 },
+    "sortOrder": { "type": "integer", "default": 0, "min": 0 },
+    "scenarios": { "type": "relation", "relation": "oneToMany", "target": "api::scenario.scenario", "mappedBy": "category" }
+  }
+}

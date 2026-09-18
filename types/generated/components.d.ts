@@ -123,6 +123,139 @@ export interface SharedHeroSlide extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHomeArticles extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_articles';
+  info: {
+    displayName: 'Homepage articles';
+    icon: 'file';
+  };
+  attributes: {
+    articles: Schema.Attribute.Relation<'manyToMany', 'api::article.article'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+  };
+}
+
+export interface SharedHomeCases extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_cases';
+  info: {
+    displayName: 'Homepage cases';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    cases: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::case-study.case-study'
+    >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+  };
+}
+
+export interface SharedHomeFaqs extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_faqs';
+  info: {
+    displayName: 'Homepage FAQs';
+    icon: 'question';
+  };
+  attributes: {
+    faqs: Schema.Attribute.Relation<'manyToMany', 'api::faq.faq'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+  };
+}
+
+export interface SharedHomeHero extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_heroes';
+  info: {
+    displayName: 'Homepage hero';
+    icon: 'picture';
+  };
+  attributes: {
+    slides: Schema.Attribute.Component<'shared.hero-slide', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 8;
+          min: 1;
+        },
+        number
+      >;
+  };
+}
+
+export interface SharedHomeProducts extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_products';
+  info: {
+    displayName: 'Homepage products';
+    icon: 'cube';
+  };
+  attributes: {
+    products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+  };
+}
+
+export interface SharedHomeScenarios extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_scenarios';
+  info: {
+    displayName: 'Homepage scenarios';
+    icon: 'apps';
+  };
+  attributes: {
+    scenarios: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::scenario.scenario'
+    >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+  };
+}
+
+export interface SharedHomeSolutions extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_solutions';
+  info: {
+    displayName: 'Homepage solutions';
+    icon: 'briefcase';
+  };
+  attributes: {
+    solutions: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::solution.solution'
+    >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+  };
+}
+
+export interface SharedHomeVideos extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_videos';
+  info: {
+    displayName: 'Homepage videos';
+    icon: 'video';
+  };
+  attributes: {
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    videos: Schema.Attribute.Relation<'manyToMany', 'api::video.video'>;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -340,6 +473,14 @@ declare module '@strapi/strapi' {
       'shared.feature-item': SharedFeatureItem;
       'shared.feature-list': SharedFeatureList;
       'shared.hero-slide': SharedHeroSlide;
+      'shared.home-articles': SharedHomeArticles;
+      'shared.home-cases': SharedHomeCases;
+      'shared.home-faqs': SharedHomeFaqs;
+      'shared.home-hero': SharedHomeHero;
+      'shared.home-products': SharedHomeProducts;
+      'shared.home-scenarios': SharedHomeScenarios;
+      'shared.home-solutions': SharedHomeSolutions;
+      'shared.home-videos': SharedHomeVideos;
       'shared.media': SharedMedia;
       'shared.media-gallery': SharedMediaGallery;
       'shared.navigation-item': SharedNavigationItem;

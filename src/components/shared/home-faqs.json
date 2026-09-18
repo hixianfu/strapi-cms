@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_shared_home_faqs",
+  "info": { "displayName": "Homepage FAQs", "icon": "question" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "maxLength": 160 },
+    "faqs": { "type": "relation", "relation": "manyToMany", "target": "api::faq.faq" }
+  }
+}

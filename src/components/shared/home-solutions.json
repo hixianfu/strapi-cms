@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_shared_home_solutions",
+  "info": { "displayName": "Homepage solutions", "icon": "briefcase" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "maxLength": 160 },
+    "solutions": { "type": "relation", "relation": "manyToMany", "target": "api::solution.solution" }
+  }
+}

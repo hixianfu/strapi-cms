@@ -18,15 +18,23 @@ async function main() {
       return;
     }
 
-    const slides = [];
-    for (const slide of seed.homePage.heroSlides || []) {
-      const file = await strapi.query('plugin::upload.file').findOne({ where: { name: slide.image.replace(/\..*$/, '') } });
-      if (!file) throw new Error(`Missing uploaded image: ${slide.image}`);
-      slides.push({ ...slide, image: file.id });
+    const sections = [];
+    for (const section of seed.homePage.sections || []) {
+      if (section.__component !== 'shared.home-hero') {
+        sections.push(section);
+        continue;
+      }
+      const slides = [];
+      for (const slide of section.slides || []) {
+        const file = await strapi.query('plugin::upload.file').findOne({ where: { name: slide.image.replace(/\..*$/, '') } });
+        if (!file) throw new Error(`Missing uploaded image: ${slide.image}`);
+        slides.push({ ...slide, image: file.id });
+      }
+      sections.push({ ...section, slides });
     }
 
     await strapi.documents('api::home-page.home-page').create({
-      data: { ...seed.homePage, heroSlides: slides, publishedAt: new Date().toISOString() },
+      data: { ...seed.homePage, sections, publishedAt: new Date().toISOString() },
     });
     console.log('Home page created');
   } finally {

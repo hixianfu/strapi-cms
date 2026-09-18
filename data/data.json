@@ -20,15 +20,17 @@
     "socialLinks": [{ "platform": "LinkedIn", "url": "https://www.linkedin.com/company/northstar-systems" }]
   },
   "homePage": {
-    "heroSlides": [
-      { "eyebrow": "Operational confidence", "title": "Make every critical process visible", "description": "Northstar connects field data, automation, and insight so your teams can act before issues become downtime.", "image": "coffee-shadow.jpg", "imageAlt": "Control room operator reviewing system data", "linkLabel": "Explore products", "linkUrl": "/products" },
-      { "eyebrow": "Built for demanding teams", "title": "Systems that keep work moving", "description": "From plant-floor monitoring to remote asset health, our platform scales with your operation.", "image": "coffee-art.jpg", "imageAlt": "Engineering team collaborating around a technical system", "linkLabel": "Meet Northstar", "linkUrl": "/about" }
+    "sections": [
+      {
+        "__component": "shared.home-hero",
+        "slides": [
+          { "eyebrow": "Operational confidence", "title": "Make every critical process visible", "description": "Northstar connects field data, automation, and insight so your teams can act before issues become downtime.", "image": "coffee-shadow.jpg", "imageAlt": "Control room operator reviewing system data", "linkLabel": "Explore products", "linkUrl": "/products" },
+          { "eyebrow": "Built for demanding teams", "title": "Systems that keep work moving", "description": "From plant-floor monitoring to remote asset health, our platform scales with your operation.", "image": "coffee-art.jpg", "imageAlt": "Engineering team collaborating around a technical system", "linkLabel": "Meet Northstar", "linkUrl": "/about" }
+        ]
+      }
     ],
     "introTitle": "Technology with a clear purpose",
     "intro": "We design dependable tools for teams that cannot afford blind spots.",
-    "featureSections": [{ "title": "Why teams choose Northstar", "description": "Practical innovation, measured outcomes, and support from people who understand operations.", "items": [{ "title": "Dependable by design", "description": "Robust systems and transparent status at every step.", "icon": "shield" }, { "title": "Ready to integrate", "description": "Connect existing equipment and workflows without a disruptive rebuild.", "icon": "plug" }, { "title": "Actionable insight", "description": "Turn live signals into decisions your teams can trust.", "icon": "chart" }] }],
-    "featuredProductsTitle": "Products for the real world",
-    "featuredArticlesTitle": "From the field",
     "cta": { "title": "Ready to see what is possible?", "description": "Talk with an engineer about your next operational challenge.", "label": "Contact our team", "url": "/contact" }
   },
   "contactPage": {

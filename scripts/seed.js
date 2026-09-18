@@ -215,14 +215,22 @@ async function importGlobal() {
 
 async function importHomePage() {
   if (!homePage) return;
-  const heroSlides = [];
-  for (const slide of homePage.heroSlides || []) {
-    const image = await checkFileExistsBeforeUpload([slide.image]);
-    heroSlides.push({ ...slide, image });
+  const sections = [];
+  for (const section of homePage.sections || []) {
+    if (section.__component !== 'shared.home-hero') {
+      sections.push(section);
+      continue;
+    }
+    const slides = [];
+    for (const slide of section.slides || []) {
+      const image = await checkFileExistsBeforeUpload([slide.image]);
+      slides.push({ ...slide, image });
+    }
+    sections.push({ ...section, slides });
   }
   const cta = homePage.cta ? { ...homePage.cta } : undefined;
   if (cta?.image) cta.image = await checkFileExistsBeforeUpload([cta.image]);
-  await createEntry({ model: 'home-page', entry: { ...homePage, heroSlides, cta } });
+  await createEntry({ model: 'home-page', entry: { ...homePage, sections, cta } });
 }
 
 async function importAbout() {

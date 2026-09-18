@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_shared_home_scenarios",
+  "info": { "displayName": "Homepage scenarios", "icon": "apps" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "maxLength": 160 },
+    "scenarios": { "type": "relation", "relation": "manyToMany", "target": "api::scenario.scenario" }
+  }
+}

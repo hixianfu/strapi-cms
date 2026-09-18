@@ -1,0 +1,15 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solution_categories",
+  "info": { "singularName": "solution-category", "pluralName": "solution-categories", "displayName": "Solution category", "description": "Organize solutions into categories." },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {},
+  "attributes": {
+    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
+    "name": { "type": "string", "required": true, "maxLength": 120 },
+    "slug": { "type": "uid", "targetField": "name", "required": true },
+    "description": { "type": "text", "maxLength": 500 },
+    "sortOrder": { "type": "integer", "default": 0, "min": 0 },
+    "solutions": { "type": "relation", "relation": "oneToMany", "target": "api::solution.solution", "mappedBy": "category" }
+  }
+}

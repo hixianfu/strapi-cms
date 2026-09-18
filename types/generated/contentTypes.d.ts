@@ -587,6 +587,57 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCaseCategoryCaseCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'case_categories';
+  info: {
+    description: 'Organize customer case studies into categories.';
+    displayName: 'Customer case category';
+    pluralName: 'case-categories';
+    singularName: 'case-category';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    cases: Schema.Attribute.Relation<'oneToMany', 'api::case-study.case-study'>;
+    contentLocale: Schema.Attribute.Enumeration<['zh', 'en']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'zh'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::case-category.case-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    sortOrder: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
   collectionName: 'case_studies';
   info: {
@@ -600,6 +651,10 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
   };
   attributes: {
     articles: Schema.Attribute.Relation<'manyToMany', 'api::article.article'>;
+    category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::case-category.case-category'
+    >;
     contentLocale: Schema.Attribute.Enumeration<['zh', 'en']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'zh'>;
@@ -965,52 +1020,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     cta: Schema.Attribute.Component<'shared.cta', false>;
-    featuredArticles: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::article.article'
-    >;
-    featuredArticlesTitle: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
-    featuredCases: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::case-study.case-study'
-    >;
-    featuredFaqs: Schema.Attribute.Relation<'manyToMany', 'api::faq.faq'>;
-    featuredProducts: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::product.product'
-    >;
-    featuredProductsTitle: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
-    featuredScenarios: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::scenario.scenario'
-    >;
-    featuredSolutions: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::solution.solution'
-    >;
-    featuredVideos: Schema.Attribute.Relation<'manyToMany', 'api::video.video'>;
-    featureSections: Schema.Attribute.Component<'shared.feature-list', true> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 6;
-        },
-        number
-      >;
-    heroSlides: Schema.Attribute.Component<'shared.hero-slide', true> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 8;
-          min: 1;
-        },
-        number
-      >;
     intro: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 1000;
@@ -1026,6 +1035,24 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'shared.home-hero',
+        'shared.home-products',
+        'shared.home-articles',
+        'shared.home-solutions',
+        'shared.home-scenarios',
+        'shared.home-cases',
+        'shared.home-videos',
+        'shared.home-faqs',
+      ]
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 12;
+        },
+        number
+      >;
     seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1179,6 +1206,57 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiScenarioCategoryScenarioCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'scenario_categories';
+  info: {
+    description: 'Organize application scenarios into categories.';
+    displayName: 'Application scenario category';
+    pluralName: 'scenario-categories';
+    singularName: 'scenario-category';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    contentLocale: Schema.Attribute.Enumeration<['zh', 'en']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'zh'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::scenario-category.scenario-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    scenarios: Schema.Attribute.Relation<'oneToMany', 'api::scenario.scenario'>;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    sortOrder: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiScenarioScenario extends Struct.CollectionTypeSchema {
   collectionName: 'scenarios';
   info: {
@@ -1195,6 +1273,10 @@ export interface ApiScenarioScenario extends Struct.CollectionTypeSchema {
     cases: Schema.Attribute.Relation<
       'manyToMany',
       'api::case-study.case-study'
+    >;
+    category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::scenario-category.scenario-category'
     >;
     content: Schema.Attribute.RichText;
     contentLocale: Schema.Attribute.Enumeration<['zh', 'en']> &
@@ -1248,6 +1330,57 @@ export interface ApiScenarioScenario extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSolutionCategorySolutionCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'solution_categories';
+  info: {
+    description: 'Organize solutions into categories.';
+    displayName: 'Solution category';
+    pluralName: 'solution-categories';
+    singularName: 'solution-category';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    contentLocale: Schema.Attribute.Enumeration<['zh', 'en']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'zh'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::solution-category.solution-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    solutions: Schema.Attribute.Relation<'oneToMany', 'api::solution.solution'>;
+    sortOrder: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
   collectionName: 'solutions';
   info: {
@@ -1264,6 +1397,10 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
     cases: Schema.Attribute.Relation<
       'manyToMany',
       'api::case-study.case-study'
+    >;
+    category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::solution-category.solution-category'
     >;
     content: Schema.Attribute.RichText;
     contentLocale: Schema.Attribute.Enumeration<['zh', 'en']> &
@@ -1924,6 +2061,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
+      'api::case-category.case-category': ApiCaseCategoryCaseCategory;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::category.category': ApiCategoryCategory;
       'api::contact-page.contact-page': ApiContactPageContactPage;
@@ -1933,7 +2071,9 @@ declare module '@strapi/strapi' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::product-category.product-category': ApiProductCategoryProductCategory;
       'api::product.product': ApiProductProduct;
+      'api::scenario-category.scenario-category': ApiScenarioCategoryScenarioCategory;
       'api::scenario.scenario': ApiScenarioScenario;
+      'api::solution-category.solution-category': ApiSolutionCategorySolutionCategory;
       'api::solution.solution': ApiSolutionSolution;
       'api::video.video': ApiVideoVideo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
