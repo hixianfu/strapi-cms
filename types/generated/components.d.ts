@@ -156,21 +156,6 @@ export interface SharedHomeCases extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedHomeFaqs extends Struct.ComponentSchema {
-  collectionName: 'components_shared_home_faqs';
-  info: {
-    displayName: 'Homepage FAQs';
-    icon: 'question';
-  };
-  attributes: {
-    faqs: Schema.Attribute.Relation<'manyToMany', 'api::faq.faq'>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
-  };
-}
-
 export interface SharedHomeCompanyShowcase extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_company_showcases';
   info: {
@@ -211,6 +196,21 @@ export interface SharedHomeCompanyShowcase extends Struct.ComponentSchema {
       }>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+  };
+}
+
+export interface SharedHomeFaqs extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_faqs';
+  info: {
+    displayName: 'Homepage FAQs';
+    icon: 'question';
+  };
+  attributes: {
+    faqs: Schema.Attribute.Relation<'manyToMany', 'api::faq.faq'>;
+    title: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
