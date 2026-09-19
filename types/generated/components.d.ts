@@ -171,6 +171,52 @@ export interface SharedHomeFaqs extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHomeCompanyShowcase extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_company_showcases';
+  info: {
+    displayName: 'Home company showcase';
+    icon: 'building';
+  };
+  attributes: {
+    article: Schema.Attribute.Relation<'manyToOne', 'api::article.article'>;
+    backgroundImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    buttonLabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 1200;
+      }>;
+    highlights: Schema.Attribute.Component<
+      'shared.home-showcase-highlight',
+      true
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 6;
+          min: 1;
+        },
+        number
+      >;
+    imageAlt: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 240;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+  };
+}
+
 export interface SharedHomeFeatureCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_feature_cards';
   info: {
@@ -276,6 +322,21 @@ export interface SharedHomeScenarios extends Struct.ComponentSchema {
     title: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
+      }>;
+  };
+}
+
+export interface SharedHomeShowcaseHighlight extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_showcase_highlights';
+  info: {
+    displayName: 'Home showcase highlight';
+    icon: 'check';
+  };
+  attributes: {
+    text: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 220;
       }>;
   };
 }
@@ -532,12 +593,14 @@ declare module '@strapi/strapi' {
       'shared.hero-slide': SharedHeroSlide;
       'shared.home-articles': SharedHomeArticles;
       'shared.home-cases': SharedHomeCases;
+      'shared.home-company-showcase': SharedHomeCompanyShowcase;
       'shared.home-faqs': SharedHomeFaqs;
       'shared.home-feature-card': SharedHomeFeatureCard;
       'shared.home-feature-cards': SharedHomeFeatureCards;
       'shared.home-hero': SharedHomeHero;
       'shared.home-products': SharedHomeProducts;
       'shared.home-scenarios': SharedHomeScenarios;
+      'shared.home-showcase-highlight': SharedHomeShowcaseHighlight;
       'shared.home-solutions': SharedHomeSolutions;
       'shared.home-videos': SharedHomeVideos;
       'shared.media': SharedMedia;

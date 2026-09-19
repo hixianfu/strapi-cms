@@ -18,7 +18,8 @@
         "shared.home-cases",
         "shared.home-videos",
         "shared.home-faqs",
-        "shared.home-feature-cards"
+        "shared.home-feature-cards",
+        "shared.home-company-showcase"
       ],
       "max": 12
     },

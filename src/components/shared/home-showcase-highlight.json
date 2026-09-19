@@ -1,0 +1,8 @@
+{
+  "collectionName": "components_shared_home_showcase_highlights",
+  "info": { "displayName": "Home showcase highlight", "icon": "check" },
+  "options": {},
+  "attributes": {
+    "text": { "type": "string", "required": true, "maxLength": 220 }
+  }
+}
