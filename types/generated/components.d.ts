@@ -101,9 +101,8 @@ export interface SharedHeroSlide extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 80;
       }>;
-    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
     imageAlt: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
@@ -120,6 +119,7 @@ export interface SharedHeroSlide extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
+    video: Schema.Attribute.Media<'videos'>;
   };
 }
 

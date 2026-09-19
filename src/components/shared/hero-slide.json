@@ -13,10 +13,14 @@
     "image": {
       "type": "media",
       "multiple": false,
-      "required": true,
       "allowedTypes": ["images"]
     },
-    "imageAlt": { "type": "string", "required": true, "maxLength": 160 },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["videos"]
+    },
+    "imageAlt": { "type": "string", "maxLength": 160 },
     "linkLabel": { "type": "string", "maxLength": 80 },
     "linkUrl": { "type": "string", "maxLength": 500 }
   }
