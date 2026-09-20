@@ -959,6 +959,18 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     defaultSeo: Schema.Attribute.Component<'shared.seo', false>;
     favicon: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    footerAfterSalesPhone: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+    footerBusinessPhone: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+    footerEmail: Schema.Attribute.Email &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
     footerLinks: Schema.Attribute.Component<'shared.navigation-item', true> &
       Schema.Attribute.SetMinMax<
         {
@@ -966,9 +978,26 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
         },
         number
       >;
+    footerProductPhone: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+    footerQrCode: Schema.Attribute.Media<'images'>;
+    footerQrCodeAlt: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    footerQrCodeLabel: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+      }>;
     footerText: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 1000;
+      }>;
+    footerWechat: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
       }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -1042,6 +1071,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'shared.home-articles',
         'shared.home-article-showcase',
         'shared.home-partners',
+        'shared.home-why-choose-us',
         'shared.home-solutions',
         'shared.home-scenarios',
         'shared.home-cases',

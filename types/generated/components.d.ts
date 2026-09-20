@@ -122,6 +122,31 @@ export interface SharedHeroSlide extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHomeAdvantageItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_advantage_items';
+  info: {
+    displayName: '\u9996\u9875\u516C\u53F8\u4F18\u52BF';
+    icon: 'check';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 600;
+      }>;
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    iconAlt: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+      }>;
+  };
+}
+
 export interface SharedHomeArticleCategoryGroup extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_article_category_groups';
   info: {
@@ -383,6 +408,25 @@ export interface SharedHomePartners extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHomeProductCategory extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_product_categories';
+  info: {
+    displayName: '\u9996\u9875\u4EA7\u54C1\u5206\u7C7B';
+    icon: 'folder';
+  };
+  attributes: {
+    category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::product-category.product-category'
+    >;
+    label: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+      }>;
+    products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
+  };
+}
+
 export interface SharedHomeProducts extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_products';
   info: {
@@ -390,6 +434,10 @@ export interface SharedHomeProducts extends Struct.ComponentSchema {
     icon: 'cube';
   };
   attributes: {
+    categories: Schema.Attribute.Component<
+      'shared.home-product-category',
+      true
+    >;
     products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
     title: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
@@ -510,6 +558,38 @@ export interface SharedHomeVideos extends Struct.ComponentSchema {
         maxLength: 160;
       }>;
     videos: Schema.Attribute.Relation<'manyToMany', 'api::video.video'>;
+  };
+}
+
+export interface SharedHomeWhyChooseUs extends Struct.ComponentSchema {
+  collectionName: 'components_shared_home_why_choose_us';
+  info: {
+    displayName: '\u9996\u9875\u4E3A\u4EC0\u4E48\u9009\u62E9\u6211\u4EEC';
+    icon: 'question';
+  };
+  attributes: {
+    advantages: Schema.Attribute.Component<'shared.home-advantage-item', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+          min: 4;
+        },
+        number
+      >;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    imageAlt: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 300;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
   };
 }
 
@@ -730,6 +810,7 @@ declare module '@strapi/strapi' {
       'shared.feature-item': SharedFeatureItem;
       'shared.feature-list': SharedFeatureList;
       'shared.hero-slide': SharedHeroSlide;
+      'shared.home-advantage-item': SharedHomeAdvantageItem;
       'shared.home-article-category-group': SharedHomeArticleCategoryGroup;
       'shared.home-article-showcase': SharedHomeArticleShowcase;
       'shared.home-articles': SharedHomeArticles;
@@ -741,12 +822,14 @@ declare module '@strapi/strapi' {
       'shared.home-hero': SharedHomeHero;
       'shared.home-partner-item': SharedHomePartnerItem;
       'shared.home-partners': SharedHomePartners;
+      'shared.home-product-category': SharedHomeProductCategory;
       'shared.home-products': SharedHomeProducts;
       'shared.home-scenarios': SharedHomeScenarios;
       'shared.home-showcase-highlight': SharedHomeShowcaseHighlight;
       'shared.home-solution-entry': SharedHomeSolutionEntry;
       'shared.home-solutions': SharedHomeSolutions;
       'shared.home-videos': SharedHomeVideos;
+      'shared.home-why-choose-us': SharedHomeWhyChooseUs;
       'shared.media': SharedMedia;
       'shared.media-gallery': SharedMediaGallery;
       'shared.navigation-item': SharedNavigationItem;

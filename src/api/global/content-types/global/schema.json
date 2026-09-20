@@ -44,6 +44,19 @@
       "max": 12
     },
     "footerText": { "type": "text", "maxLength": 1000 },
+    "footerBusinessPhone": { "type": "string", "maxLength": 80 },
+    "footerProductPhone": { "type": "string", "maxLength": 80 },
+    "footerAfterSalesPhone": { "type": "string", "maxLength": 80 },
+    "footerWechat": { "type": "string", "maxLength": 120 },
+    "footerEmail": { "type": "email", "maxLength": 160 },
+    "footerQrCode": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "footerQrCodeAlt": { "type": "string", "maxLength": 160 },
+    "footerQrCodeLabel": { "type": "string", "maxLength": 120 },
     "footerLinks": {
       "type": "component",
       "repeatable": true,

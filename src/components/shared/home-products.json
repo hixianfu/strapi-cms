@@ -4,6 +4,11 @@
   "options": {},
   "attributes": {
     "title": { "type": "string", "maxLength": 160 },
+    "categories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.home-product-category"
+    },
     "products": {
       "type": "relation",
       "relation": "manyToMany",

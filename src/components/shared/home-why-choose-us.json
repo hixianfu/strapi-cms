@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_home_why_choose_us",
+  "info": { "displayName": "首页为什么选择我们", "icon": "question" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true, "maxLength": 160 },
+    "subtitle": { "type": "string", "maxLength": 300 },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "imageAlt": { "type": "string", "maxLength": 160 },
+    "advantages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.home-advantage-item",
+      "min": 4,
+      "max": 4
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_home_product_categories",
+  "info": { "displayName": "首页产品分类", "icon": "folder" },
+  "options": {},
+  "attributes": {
+    "label": { "type": "string", "maxLength": 120 },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product-category.product-category"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product"
+    }
+  }
+}
