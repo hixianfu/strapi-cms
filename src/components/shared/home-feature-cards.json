@@ -1,10 +1,17 @@
 {
   "collectionName": "components_shared_home_feature_cards_sections",
-  "info": { "displayName": "Home feature cards", "icon": "grid" },
+  "info": { "displayName": "首页功能卡片", "icon": "grid" },
   "options": {},
   "attributes": {
     "title": { "type": "string", "required": true, "maxLength": 160 },
     "description": { "type": "text", "maxLength": 500 },
-    "cards": { "type": "component", "repeatable": true, "required": true, "component": "shared.home-feature-card", "min": 1, "max": 8 }
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "shared.home-feature-card",
+      "min": 1,
+      "max": 8
+    }
   }
 }

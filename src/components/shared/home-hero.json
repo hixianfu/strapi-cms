@@ -1,6 +1,6 @@
 {
   "collectionName": "components_shared_home_heroes",
-  "info": { "displayName": "Homepage hero", "icon": "picture" },
+  "info": { "displayName": "首页轮播", "icon": "picture" },
   "options": {},
   "attributes": {
     "slides": {

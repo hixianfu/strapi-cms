@@ -447,7 +447,7 @@ export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
   collectionName: 'abouts';
   info: {
     description: 'Write about yourself and the content you create';
-    displayName: 'About';
+    displayName: '\u5173\u4E8E\u6211\u4EEC';
     pluralName: 'abouts';
     singularName: 'about';
   };
@@ -498,7 +498,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
     description: 'Create your blog content';
-    displayName: 'Article';
+    displayName: '\u6587\u7AE0';
     pluralName: 'articles';
     singularName: 'article';
   };
@@ -556,7 +556,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   collectionName: 'authors';
   info: {
     description: 'Create authors for your content';
-    displayName: 'Author';
+    displayName: '\u4F5C\u8005';
     pluralName: 'authors';
     singularName: 'author';
   };
@@ -592,7 +592,7 @@ export interface ApiCaseCategoryCaseCategory
   collectionName: 'case_categories';
   info: {
     description: 'Organize customer case studies into categories.';
-    displayName: 'Customer case category';
+    displayName: '\u5BA2\u6237\u6848\u4F8B\u5206\u7C7B';
     pluralName: 'case-categories';
     singularName: 'case-category';
   };
@@ -642,7 +642,7 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
   collectionName: 'case_studies';
   info: {
     description: 'Customer applications and results.';
-    displayName: 'Customer case study';
+    displayName: '\u5BA2\u6237\u6848\u4F8B';
     pluralName: 'case-studies';
     singularName: 'case-study';
   };
@@ -728,7 +728,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
     description: 'Organize your content into categories';
-    displayName: 'Category';
+    displayName: '\u5206\u7C7B';
     pluralName: 'categories';
     singularName: 'category';
   };
@@ -763,7 +763,7 @@ export interface ApiContactPageContactPage extends Struct.CollectionTypeSchema {
   collectionName: 'contact_pages';
   info: {
     description: 'Manage contact information and form copy.';
-    displayName: 'Contact page';
+    displayName: '\u8054\u7CFB\u6211\u4EEC';
     pluralName: 'contact-pages';
     singularName: 'contact-page';
   };
@@ -830,7 +830,7 @@ export interface ApiContactSubmissionContactSubmission
   collectionName: 'contact_submissions';
   info: {
     description: 'Inbound contact requests submitted from the public website.';
-    displayName: 'Contact submission';
+    displayName: '\u8054\u7CFB\u8868\u5355';
     pluralName: 'contact-submissions';
     singularName: 'contact-submission';
   };
@@ -946,7 +946,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
     description: 'Define global settings';
-    displayName: 'Global';
+    displayName: '\u5168\u5C40\u914D\u7F6E';
     pluralName: 'globals';
     singularName: 'global';
   };
@@ -1008,7 +1008,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
     description: 'Manage homepage content.';
-    displayName: 'Home page';
+    displayName: '\u9996\u9875';
     pluralName: 'home-pages';
     singularName: 'home-page';
   };
@@ -1067,7 +1067,7 @@ export interface ApiProductCategoryProductCategory
   collectionName: 'product_categories';
   info: {
     description: 'Group products for navigation and filtering.';
-    displayName: 'Product category';
+    displayName: '\u4EA7\u54C1\u5206\u7C7B';
     pluralName: 'product-categories';
     singularName: 'product-category';
   };
@@ -1126,7 +1126,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
     description: 'Manage products displayed on the corporate website.';
-    displayName: 'Product';
+    displayName: '\u4EA7\u54C1';
     pluralName: 'products';
     singularName: 'product';
   };
@@ -1213,7 +1213,7 @@ export interface ApiScenarioCategoryScenarioCategory
   collectionName: 'scenario_categories';
   info: {
     description: 'Organize application scenarios into categories.';
-    displayName: 'Application scenario category';
+    displayName: '\u5E94\u7528\u573A\u666F\u5206\u7C7B';
     pluralName: 'scenario-categories';
     singularName: 'scenario-category';
   };
@@ -1263,7 +1263,7 @@ export interface ApiScenarioScenario extends Struct.CollectionTypeSchema {
   collectionName: 'scenarios';
   info: {
     description: 'Application and use-case pages.';
-    displayName: 'Application scenario';
+    displayName: '\u5E94\u7528\u573A\u666F';
     pluralName: 'scenarios';
     singularName: 'scenario';
   };
@@ -1337,7 +1337,7 @@ export interface ApiSolutionCategorySolutionCategory
   collectionName: 'solution_categories';
   info: {
     description: 'Organize solutions into categories.';
-    displayName: 'Solution category';
+    displayName: '\u89E3\u51B3\u65B9\u6848\u5206\u7C7B';
     pluralName: 'solution-categories';
     singularName: 'solution-category';
   };
@@ -1387,7 +1387,7 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
   collectionName: 'solutions';
   info: {
     description: 'Industry and customer-need based packaging solutions.';
-    displayName: 'Solution';
+    displayName: '\u89E3\u51B3\u65B9\u6848';
     pluralName: 'solutions';
     singularName: 'solution';
   };

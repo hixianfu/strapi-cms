@@ -1,15 +1,30 @@
 {
   "kind": "collectionType",
   "collectionName": "case_categories",
-  "info": { "singularName": "case-category", "pluralName": "case-categories", "displayName": "Customer case category", "description": "Organize customer case studies into categories." },
+  "info": {
+    "singularName": "case-category",
+    "pluralName": "case-categories",
+    "displayName": "客户案例分类",
+    "description": "Organize customer case studies into categories."
+  },
   "options": { "draftAndPublish": false },
   "pluginOptions": {},
   "attributes": {
-    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
+    "contentLocale": {
+      "type": "enumeration",
+      "enum": ["zh", "en"],
+      "default": "zh",
+      "required": true
+    },
     "name": { "type": "string", "required": true, "maxLength": 120 },
     "slug": { "type": "uid", "targetField": "name", "required": true },
     "description": { "type": "text", "maxLength": 500 },
     "sortOrder": { "type": "integer", "default": 0, "min": 0 },
-    "cases": { "type": "relation", "relation": "oneToMany", "target": "api::case-study.case-study", "mappedBy": "category" }
+    "cases": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::case-study.case-study",
+      "mappedBy": "category"
+    }
   }
 }

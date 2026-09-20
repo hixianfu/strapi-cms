@@ -4,7 +4,7 @@
   "info": {
     "singularName": "contact-submission",
     "pluralName": "contact-submissions",
-    "displayName": "Contact submission",
+    "displayName": "联系表单",
     "description": "Inbound contact requests submitted from the public website."
   },
   "options": { "draftAndPublish": false },

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article",
+    "displayName": "文章",
     "description": "Create your blog content"
   },
   "options": {
@@ -12,7 +12,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
+    "contentLocale": {
+      "type": "enumeration",
+      "enum": ["zh", "en"],
+      "default": "zh",
+      "required": true
+    },
     "title": {
       "type": "string"
     },
@@ -48,14 +53,39 @@
       "target": "api::product.product",
       "inversedBy": "articles"
     },
-    "solutions": { "type": "relation", "relation": "manyToMany", "target": "api::solution.solution" },
-    "scenarios": { "type": "relation", "relation": "manyToMany", "target": "api::scenario.scenario" },
-    "cases": { "type": "relation", "relation": "manyToMany", "target": "api::case-study.case-study" },
-    "videos": { "type": "relation", "relation": "manyToMany", "target": "api::video.video" },
-    "faqs": { "type": "relation", "relation": "manyToMany", "target": "api::faq.faq" },
+    "solutions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::solution.solution"
+    },
+    "scenarios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::scenario.scenario"
+    },
+    "cases": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::case-study.case-study"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::video.video"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::faq.faq"
+    },
     "blocks": {
       "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+      "components": [
+        "shared.media",
+        "shared.quote",
+        "shared.rich-text",
+        "shared.slider"
+      ]
     }
   }
 }

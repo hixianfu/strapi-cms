@@ -1,7 +1,12 @@
 {
   "kind": "singleType",
   "collectionName": "home_pages",
-  "info": { "singularName": "home-page", "pluralName": "home-pages", "displayName": "Home page", "description": "Manage homepage content." },
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "首页",
+    "description": "Manage homepage content."
+  },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},
   "attributes": {
@@ -23,7 +28,15 @@
       ],
       "max": 12
     },
-    "cta": { "type": "component", "repeatable": false, "component": "shared.cta" },
-    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.cta"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
   }
 }

@@ -4,27 +4,65 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "Product",
+    "displayName": "产品",
     "description": "Manage products displayed on the corporate website."
   },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},
   "attributes": {
-    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
+    "contentLocale": {
+      "type": "enumeration",
+      "enum": ["zh", "en"],
+      "default": "zh",
+      "required": true
+    },
     "name": { "type": "string", "required": true, "maxLength": 160 },
     "slug": { "type": "uid", "targetField": "name", "required": true },
     "summary": { "type": "text", "required": true, "maxLength": 500 },
     "details": { "type": "richtext", "required": false },
     "blocks": {
       "type": "dynamiczone",
-      "components": ["shared.rich-text", "shared.feature-list", "shared.media-gallery", "shared.cta"]
+      "components": [
+        "shared.rich-text",
+        "shared.feature-list",
+        "shared.media-gallery",
+        "shared.cta"
+      ]
     },
-    "cover": { "type": "media", "multiple": false, "required": true, "allowedTypes": ["images"] },
-    "gallery": { "type": "media", "multiple": true, "required": false, "allowedTypes": ["images"] },
-    "videos": { "type": "media", "multiple": true, "required": false, "allowedTypes": ["videos"] },
-    "productVideos": { "type": "component", "repeatable": true, "component": "shared.product-video" },
-    "specifications": { "type": "component", "repeatable": true, "component": "shared.specification" },
-    "documents": { "type": "media", "multiple": true, "required": false, "allowedTypes": ["files"] },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "videos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["videos"]
+    },
+    "productVideos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.product-video"
+    },
+    "specifications": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.specification"
+    },
+    "documents": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["files"]
+    },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
@@ -37,12 +75,37 @@
       "target": "api::article.article",
       "mappedBy": "products"
     },
-    "solutions": { "type": "relation", "relation": "manyToMany", "target": "api::solution.solution" },
-    "scenarios": { "type": "relation", "relation": "manyToMany", "target": "api::scenario.scenario" },
-    "cases": { "type": "relation", "relation": "manyToMany", "target": "api::case-study.case-study" },
-    "faqs": { "type": "relation", "relation": "manyToMany", "target": "api::faq.faq" },
-    "sortOrder": { "type": "integer", "default": 0, "min": 0, "max": 2147483647 },
+    "solutions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::solution.solution"
+    },
+    "scenarios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::scenario.scenario"
+    },
+    "cases": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::case-study.case-study"
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::faq.faq"
+    },
+    "sortOrder": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "max": 2147483647
+    },
     "featured": { "type": "boolean", "default": false },
-    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
   }
 }

@@ -1,9 +1,13 @@
 {
   "collectionName": "components_shared_home_videos",
-  "info": { "displayName": "Homepage videos", "icon": "video" },
+  "info": { "displayName": "首页视频中心", "icon": "video" },
   "options": {},
   "attributes": {
     "title": { "type": "string", "maxLength": 160 },
-    "videos": { "type": "relation", "relation": "manyToMany", "target": "api::video.video" }
+    "videos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::video.video"
+    }
   }
 }

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "author",
     "pluralName": "authors",
-    "displayName": "Author",
+    "displayName": "作者",
     "description": "Create authors for your content"
   },
   "options": {
@@ -12,7 +12,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
+    "contentLocale": {
+      "type": "enumeration",
+      "enum": ["zh", "en"],
+      "default": "zh",
+      "required": true
+    },
     "name": {
       "type": "string"
     },

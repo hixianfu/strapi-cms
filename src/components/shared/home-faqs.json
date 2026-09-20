@@ -1,9 +1,13 @@
 {
   "collectionName": "components_shared_home_faqs",
-  "info": { "displayName": "Homepage FAQs", "icon": "question" },
+  "info": { "displayName": "首页常见问题", "icon": "question" },
   "options": {},
   "attributes": {
     "title": { "type": "string", "maxLength": 160 },
-    "faqs": { "type": "relation", "relation": "manyToMany", "target": "api::faq.faq" }
+    "faqs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::faq.faq"
+    }
   }
 }

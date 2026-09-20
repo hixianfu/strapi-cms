@@ -1,29 +1,72 @@
 {
   "kind": "collectionType",
   "collectionName": "case_studies",
-  "info": { "singularName": "case-study", "pluralName": "case-studies", "displayName": "Customer case study", "description": "Customer applications and results." },
+  "info": {
+    "singularName": "case-study",
+    "pluralName": "case-studies",
+    "displayName": "客户案例",
+    "description": "Customer applications and results."
+  },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},
   "attributes": {
-    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
+    "contentLocale": {
+      "type": "enumeration",
+      "enum": ["zh", "en"],
+      "default": "zh",
+      "required": true
+    },
     "title": { "type": "string", "required": true, "maxLength": 160 },
     "slug": { "type": "uid", "targetField": "title", "required": true },
     "summary": { "type": "text", "required": true, "maxLength": 500 },
-    "category": { "type": "relation", "relation": "manyToOne", "target": "api::case-category.case-category", "inversedBy": "cases" },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::case-category.case-category",
+      "inversedBy": "cases"
+    },
     "industry": { "type": "string", "maxLength": 120 },
     "customerProblem": { "type": "text", "maxLength": 2000 },
     "originalPackaging": { "type": "text", "maxLength": 2000 },
     "solution": { "type": "richtext" },
     "results": { "type": "text", "maxLength": 2000 },
     "cover": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
-    "gallery": { "type": "media", "multiple": true, "allowedTypes": ["images", "videos"] },
-    "products": { "type": "relation", "relation": "manyToMany", "target": "api::product.product" },
-    "solutions": { "type": "relation", "relation": "manyToMany", "target": "api::solution.solution" },
-    "scenarios": { "type": "relation", "relation": "manyToMany", "target": "api::scenario.scenario" },
-    "videos": { "type": "relation", "relation": "manyToMany", "target": "api::video.video" },
-    "articles": { "type": "relation", "relation": "manyToMany", "target": "api::article.article" },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images", "videos"]
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product"
+    },
+    "solutions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::solution.solution"
+    },
+    "scenarios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::scenario.scenario"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::video.video"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article"
+    },
     "sortOrder": { "type": "integer", "default": 0, "min": 0 },
     "featured": { "type": "boolean", "default": false },
-    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
   }
 }

@@ -1,11 +1,21 @@
 {
   "kind": "collectionType",
   "collectionName": "contact_pages",
-  "info": { "singularName": "contact-page", "pluralName": "contact-pages", "displayName": "Contact page", "description": "Manage contact information and form copy." },
+  "info": {
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "联系我们",
+    "description": "Manage contact information and form copy."
+  },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},
   "attributes": {
-    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
+    "contentLocale": {
+      "type": "enumeration",
+      "enum": ["zh", "en"],
+      "default": "zh",
+      "required": true
+    },
     "title": { "type": "string", "required": true, "maxLength": 160 },
     "intro": { "type": "text", "maxLength": 1000 },
     "address": { "type": "text", "maxLength": 500 },
@@ -15,6 +25,10 @@
     "mapEmbedUrl": { "type": "string", "maxLength": 1000 },
     "formTitle": { "type": "string", "maxLength": 160 },
     "formIntro": { "type": "text", "maxLength": 500 },
-    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
   }
 }

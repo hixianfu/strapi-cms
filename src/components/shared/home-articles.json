@@ -1,9 +1,13 @@
 {
   "collectionName": "components_shared_home_articles",
-  "info": { "displayName": "Homepage articles", "icon": "file" },
+  "info": { "displayName": "首页文章", "icon": "file" },
   "options": {},
   "attributes": {
     "title": { "type": "string", "maxLength": 160 },
-    "articles": { "type": "relation", "relation": "manyToMany", "target": "api::article.article" }
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article"
+    }
   }
 }

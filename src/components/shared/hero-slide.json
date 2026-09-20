@@ -8,7 +8,7 @@
   "options": {},
   "attributes": {
     "eyebrow": { "type": "string", "maxLength": 80 },
-    "title": { "type": "string", "required": true, "maxLength": 160 },
+    "title": { "type": "string", "maxLength": 160 },
     "description": { "type": "text", "maxLength": 500 },
     "image": {
       "type": "media",

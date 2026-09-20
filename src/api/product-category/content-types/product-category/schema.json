@@ -4,17 +4,27 @@
   "info": {
     "singularName": "product-category",
     "pluralName": "product-categories",
-    "displayName": "Product category",
+    "displayName": "产品分类",
     "description": "Group products for navigation and filtering."
   },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},
   "attributes": {
-    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
+    "contentLocale": {
+      "type": "enumeration",
+      "enum": ["zh", "en"],
+      "default": "zh",
+      "required": true
+    },
     "name": { "type": "string", "required": true, "maxLength": 120 },
     "slug": { "type": "uid", "targetField": "name", "required": true },
     "description": { "type": "text", "maxLength": 500 },
-    "sortOrder": { "type": "integer", "default": 0, "min": 0, "max": 2147483647 },
+    "sortOrder": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "max": 2147483647
+    },
     "products": {
       "type": "relation",
       "relation": "oneToMany",

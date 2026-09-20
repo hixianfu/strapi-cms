@@ -1,7 +1,7 @@
 {
   "collectionName": "components_shared_product_videos",
   "info": {
-    "displayName": "Product Video",
+    "displayName": "产品视频",
     "description": "A titled video shown on a product detail page.",
     "icon": "play"
   },

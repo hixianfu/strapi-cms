@@ -1,9 +1,13 @@
 {
   "collectionName": "components_shared_home_products",
-  "info": { "displayName": "Homepage products", "icon": "cube" },
+  "info": { "displayName": "首页产品", "icon": "cube" },
   "options": {},
   "attributes": {
     "title": { "type": "string", "maxLength": 160 },
-    "products": { "type": "relation", "relation": "manyToMany", "target": "api::product.product" }
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product"
+    }
   }
 }

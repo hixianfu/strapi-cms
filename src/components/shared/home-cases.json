@@ -1,9 +1,13 @@
 {
   "collectionName": "components_shared_home_cases",
-  "info": { "displayName": "Homepage cases", "icon": "chartBubble" },
+  "info": { "displayName": "首页客户案例", "icon": "chartBubble" },
   "options": {},
   "attributes": {
     "title": { "type": "string", "maxLength": 160 },
-    "cases": { "type": "relation", "relation": "manyToMany", "target": "api::case-study.case-study" }
+    "cases": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::case-study.case-study"
+    }
   }
 }

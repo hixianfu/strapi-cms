@@ -1,6 +1,6 @@
 {
   "collectionName": "components_shared_feature_items",
-  "info": { "displayName": "Feature item", "icon": "star" },
+  "info": { "displayName": "功能项", "icon": "star" },
   "options": {},
   "attributes": {
     "title": { "type": "string", "required": true, "maxLength": 120 },

@@ -37,7 +37,7 @@ export interface SharedCta extends Struct.ComponentSchema {
 export interface SharedFeatureItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_feature_items';
   info: {
-    displayName: 'Feature item';
+    displayName: '\u529F\u80FD\u9879';
     icon: 'star';
   };
   attributes: {
@@ -60,7 +60,7 @@ export interface SharedFeatureItem extends Struct.ComponentSchema {
 export interface SharedFeatureList extends Struct.ComponentSchema {
   collectionName: 'components_shared_feature_lists';
   info: {
-    displayName: 'Feature list';
+    displayName: '\u529F\u80FD\u5217\u8868';
     icon: 'bulletList';
   };
   attributes: {
@@ -115,7 +115,6 @@ export interface SharedHeroSlide extends Struct.ComponentSchema {
         maxLength: 500;
       }>;
     title: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 160;
       }>;
@@ -126,7 +125,7 @@ export interface SharedHeroSlide extends Struct.ComponentSchema {
 export interface SharedHomeArticles extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_articles';
   info: {
-    displayName: 'Homepage articles';
+    displayName: '\u9996\u9875\u6587\u7AE0';
     icon: 'file';
   };
   attributes: {
@@ -141,7 +140,7 @@ export interface SharedHomeArticles extends Struct.ComponentSchema {
 export interface SharedHomeCases extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_cases';
   info: {
-    displayName: 'Homepage cases';
+    displayName: '\u9996\u9875\u5BA2\u6237\u6848\u4F8B';
     icon: 'chartBubble';
   };
   attributes: {
@@ -159,7 +158,7 @@ export interface SharedHomeCases extends Struct.ComponentSchema {
 export interface SharedHomeCompanyShowcase extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_company_showcases';
   info: {
-    displayName: 'Home company showcase';
+    displayName: '\u9996\u9875\u516C\u53F8\u5C55\u793A';
     icon: 'building';
   };
   attributes: {
@@ -205,7 +204,7 @@ export interface SharedHomeCompanyShowcase extends Struct.ComponentSchema {
 export interface SharedHomeFaqs extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_faqs';
   info: {
-    displayName: 'Homepage FAQs';
+    displayName: '\u9996\u9875\u5E38\u89C1\u95EE\u9898';
     icon: 'question';
   };
   attributes: {
@@ -220,7 +219,7 @@ export interface SharedHomeFaqs extends Struct.ComponentSchema {
 export interface SharedHomeFeatureCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_feature_cards';
   info: {
-    displayName: 'Home feature card';
+    displayName: '\u9996\u9875\u529F\u80FD\u5361\u7247';
     icon: 'star';
   };
   attributes: {
@@ -249,7 +248,7 @@ export interface SharedHomeFeatureCard extends Struct.ComponentSchema {
 export interface SharedHomeFeatureCards extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_feature_cards_sections';
   info: {
-    displayName: 'Home feature cards';
+    displayName: '\u9996\u9875\u529F\u80FD\u5361\u7247';
     icon: 'grid';
   };
   attributes: {
@@ -277,7 +276,7 @@ export interface SharedHomeFeatureCards extends Struct.ComponentSchema {
 export interface SharedHomeHero extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_heroes';
   info: {
-    displayName: 'Homepage hero';
+    displayName: '\u9996\u9875\u8F6E\u64AD';
     icon: 'picture';
   };
   attributes: {
@@ -296,7 +295,7 @@ export interface SharedHomeHero extends Struct.ComponentSchema {
 export interface SharedHomeProducts extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_products';
   info: {
-    displayName: 'Homepage products';
+    displayName: '\u9996\u9875\u4EA7\u54C1';
     icon: 'cube';
   };
   attributes: {
@@ -311,7 +310,7 @@ export interface SharedHomeProducts extends Struct.ComponentSchema {
 export interface SharedHomeScenarios extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_scenarios';
   info: {
-    displayName: 'Homepage scenarios';
+    displayName: '\u9996\u9875\u5E94\u7528\u573A\u666F';
     icon: 'apps';
   };
   attributes: {
@@ -329,7 +328,7 @@ export interface SharedHomeScenarios extends Struct.ComponentSchema {
 export interface SharedHomeShowcaseHighlight extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_showcase_highlights';
   info: {
-    displayName: 'Home showcase highlight';
+    displayName: '\u9996\u9875\u4EAE\u70B9';
     icon: 'check';
   };
   attributes: {
@@ -344,7 +343,7 @@ export interface SharedHomeShowcaseHighlight extends Struct.ComponentSchema {
 export interface SharedHomeSolutions extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_solutions';
   info: {
-    displayName: 'Homepage solutions';
+    displayName: '\u9996\u9875\u89E3\u51B3\u65B9\u6848';
     icon: 'briefcase';
   };
   attributes: {
@@ -362,7 +361,7 @@ export interface SharedHomeSolutions extends Struct.ComponentSchema {
 export interface SharedHomeVideos extends Struct.ComponentSchema {
   collectionName: 'components_shared_home_videos';
   info: {
-    displayName: 'Homepage videos';
+    displayName: '\u9996\u9875\u89C6\u9891\u4E2D\u5FC3';
     icon: 'video';
   };
   attributes: {
@@ -388,7 +387,7 @@ export interface SharedMedia extends Struct.ComponentSchema {
 export interface SharedMediaGallery extends Struct.ComponentSchema {
   collectionName: 'components_shared_media_galleries';
   info: {
-    displayName: 'Media gallery';
+    displayName: '\u5A92\u4F53\u753B\u5ECA';
     icon: 'landscape';
   };
   attributes: {
@@ -438,7 +437,7 @@ export interface SharedProductVideo extends Struct.ComponentSchema {
   collectionName: 'components_shared_product_videos';
   info: {
     description: 'A titled video shown on a product detail page.';
-    displayName: 'Product Video';
+    displayName: '\u4EA7\u54C1\u89C6\u9891';
     icon: 'play';
   };
   attributes: {
