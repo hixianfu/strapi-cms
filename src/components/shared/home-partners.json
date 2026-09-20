@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_home_partners",
+  "info": { "displayName": "首页合作伙伴", "icon": "handHeart" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "maxLength": 160 },
+    "partners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.home-partner-item",
+      "min": 1,
+      "max": 50
+    }
+  }
+}

@@ -1040,6 +1040,8 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         'shared.home-hero',
         'shared.home-products',
         'shared.home-articles',
+        'shared.home-article-showcase',
+        'shared.home-partners',
         'shared.home-solutions',
         'shared.home-scenarios',
         'shared.home-cases',

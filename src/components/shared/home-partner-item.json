@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_home_partner_items",
+  "info": { "displayName": "合作伙伴", "icon": "picture" },
+  "options": {},
+  "attributes": {
+    "name": { "type": "string", "required": true, "maxLength": 120 },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "imageAlt": { "type": "string", "maxLength": 160 },
+    "href": { "type": "string", "required": true, "maxLength": 500 },
+    "openInNewTab": { "type": "boolean", "default": true }
+  }
+}

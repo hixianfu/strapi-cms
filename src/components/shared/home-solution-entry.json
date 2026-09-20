@@ -1,22 +1,23 @@
 {
-  "collectionName": "components_shared_home_solutions",
-  "info": { "displayName": "首页解决方案", "icon": "briefcase" },
+  "collectionName": "components_shared_home_solution_entries",
+  "info": { "displayName": "首页方案条目", "icon": "layers" },
   "options": {},
   "attributes": {
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::solution-category.solution-category",
+      "required": true
+    },
     "title": { "type": "string", "maxLength": 160 },
+    "description": { "type": "text", "maxLength": 600 },
     "backgroundImage": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": ["images"]
     },
     "imageAlt": { "type": "string", "maxLength": 160 },
-    "buttonLabel": { "type": "string", "maxLength": 80 },
-    "entries": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.home-solution-entry",
-      "max": 8
-    },
     "solutions": {
       "type": "relation",
       "relation": "manyToMany",

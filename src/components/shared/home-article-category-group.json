@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_home_article_category_groups",
+  "info": { "displayName": "首页文章分类组", "icon": "folder" },
+  "options": {},
+  "attributes": {
+    "label": { "type": "string", "maxLength": 120 },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "required": true
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article"
+    }
+  }
+}

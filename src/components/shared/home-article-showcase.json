@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_home_article_showcases",
+  "info": { "displayName": "首页文章分类展示", "icon": "newspaper" },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true, "maxLength": 160 },
+    "groups": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.home-article-category-group",
+      "min": 1,
+      "max": 8
+    }
+  }
+}
