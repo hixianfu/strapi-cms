@@ -5,7 +5,7 @@
     "singularName": "solution",
     "pluralName": "solutions",
     "displayName": "解决方案",
-    "description": "Industry and customer-need based packaging solutions."
+    "description": "管理基于行业和客户需求的包装解决方案。"
   },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},

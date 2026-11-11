@@ -1,7 +1,7 @@
 {
   "kind": "collectionType",
   "collectionName": "faqs",
-  "info": { "singularName": "faq", "pluralName": "faqs", "displayName": "FAQ", "description": "Frequently asked questions for products and solutions." },
+  "info": { "singularName": "faq", "pluralName": "faqs", "displayName": "常见问题", "description": "管理产品和解决方案常见问题。" },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},
   "attributes": {

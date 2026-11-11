@@ -5,7 +5,7 @@
     "singularName": "article",
     "pluralName": "articles",
     "displayName": "文章",
-    "description": "Create your blog content"
+    "description": "管理博客文章内容。"
   },
   "options": {
     "draftAndPublish": true

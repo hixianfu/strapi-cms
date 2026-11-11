@@ -5,7 +5,7 @@
     "singularName": "home-page",
     "pluralName": "home-pages",
     "displayName": "首页",
-    "description": "Manage homepage content."
+    "description": "管理网站首页内容。"
   },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},

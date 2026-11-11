@@ -5,7 +5,7 @@
     "singularName": "case-category",
     "pluralName": "case-categories",
     "displayName": "客户案例分类",
-    "description": "Organize customer case studies into categories."
+    "description": "将客户案例归类管理。"
   },
   "options": { "draftAndPublish": false },
   "pluginOptions": {},

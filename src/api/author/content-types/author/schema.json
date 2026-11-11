@@ -5,7 +5,7 @@
     "singularName": "author",
     "pluralName": "authors",
     "displayName": "作者",
-    "description": "Create authors for your content"
+    "description": "管理文章作者信息。"
   },
   "options": {
     "draftAndPublish": false

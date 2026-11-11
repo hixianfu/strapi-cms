@@ -5,7 +5,7 @@
     "singularName": "category",
     "pluralName": "categories",
     "displayName": "分类",
-    "description": "Organize your content into categories"
+    "description": "将文章内容归类管理。"
   },
   "options": {
     "draftAndPublish": false

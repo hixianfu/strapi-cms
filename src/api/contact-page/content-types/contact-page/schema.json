@@ -5,7 +5,7 @@
     "singularName": "contact-page",
     "pluralName": "contact-pages",
     "displayName": "联系我们",
-    "description": "Manage contact information and form copy."
+    "description": "管理联系我们页面信息和表单文案。"
   },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},

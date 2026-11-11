@@ -1,7 +1,7 @@
 {
   "kind": "collectionType",
   "collectionName": "videos",
-  "info": { "singularName": "video", "pluralName": "videos", "displayName": "Video", "description": "Central video library with uploads or external embeds." },
+  "info": { "singularName": "video", "pluralName": "videos", "displayName": "视频", "description": "视频中心内容，支持上传视频或使用外部视频链接。" },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},
   "attributes": {

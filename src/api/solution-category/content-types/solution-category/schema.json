@@ -5,7 +5,7 @@
     "singularName": "solution-category",
     "pluralName": "solution-categories",
     "displayName": "解决方案分类",
-    "description": "Organize solutions into categories."
+    "description": "将解决方案归类管理。"
   },
   "options": { "draftAndPublish": false },
   "pluginOptions": {},

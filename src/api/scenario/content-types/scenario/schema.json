@@ -5,7 +5,7 @@
     "singularName": "scenario",
     "pluralName": "scenarios",
     "displayName": "应用场景",
-    "description": "Application and use-case pages."
+    "description": "管理应用场景和使用案例页面。"
   },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},

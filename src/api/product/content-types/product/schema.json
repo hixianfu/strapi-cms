@@ -5,7 +5,7 @@
     "singularName": "product",
     "pluralName": "products",
     "displayName": "产品",
-    "description": "Manage products displayed on the corporate website."
+    "description": "管理企业网站展示的产品。"
   },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},

@@ -5,7 +5,7 @@
     "singularName": "product-category",
     "pluralName": "product-categories",
     "displayName": "产品分类",
-    "description": "Group products for navigation and filtering."
+    "description": "管理产品导航和筛选分类。"
   },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},

@@ -5,7 +5,7 @@
     "singularName": "global",
     "pluralName": "globals",
     "displayName": "全局配置",
-    "description": "Define global settings"
+    "description": "管理网站全局配置。"
   },
   "options": {
     "draftAndPublish": false

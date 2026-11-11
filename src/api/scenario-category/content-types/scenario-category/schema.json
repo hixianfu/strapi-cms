@@ -5,7 +5,7 @@
     "singularName": "scenario-category",
     "pluralName": "scenario-categories",
     "displayName": "应用场景分类",
-    "description": "Organize application scenarios into categories."
+    "description": "将应用场景归类管理。"
   },
   "options": { "draftAndPublish": false },
   "pluginOptions": {},

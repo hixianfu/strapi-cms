@@ -5,7 +5,7 @@
     "singularName": "case-study",
     "pluralName": "case-studies",
     "displayName": "客户案例",
-    "description": "Customer applications and results."
+    "description": "管理客户应用案例和项目成果。"
   },
   "options": { "draftAndPublish": true },
   "pluginOptions": {},
