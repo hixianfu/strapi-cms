@@ -11,21 +11,32 @@
   "pluginOptions": {},
   "attributes": {
     "contentLocale": {
+      "displayName": "内容语言（contentLocale）",
       "type": "enumeration",
       "enum": ["zh", "en"],
       "default": "zh",
       "required": true
     },
-    "title": { "type": "string", "required": true, "maxLength": 160 },
-    "intro": { "type": "text", "maxLength": 1000 },
-    "address": { "type": "text", "maxLength": 500 },
-    "phone": { "type": "string", "maxLength": 80 },
-    "email": { "type": "email" },
-    "officeHours": { "type": "text", "maxLength": 500 },
-    "mapEmbedUrl": { "type": "string", "maxLength": 1000 },
-    "formTitle": { "type": "string", "maxLength": 160 },
-    "formIntro": { "type": "text", "maxLength": 500 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "required": true, "maxLength": 160 },
+    "intro": {
+      "displayName": "介绍内容（intro）", "type": "text", "maxLength": 1000 },
+    "address": {
+      "displayName": "地址（address）", "type": "text", "maxLength": 500 },
+    "phone": {
+      "displayName": "联系电话（phone）", "type": "string", "maxLength": 80 },
+    "email": {
+      "displayName": "电子邮箱（email）", "type": "email" },
+    "officeHours": {
+      "displayName": "办公时间（officeHours）", "type": "text", "maxLength": 500 },
+    "mapEmbedUrl": {
+      "displayName": "地图嵌入地址（mapEmbedUrl）", "type": "string", "maxLength": 1000 },
+    "formTitle": {
+      "displayName": "表单标题（formTitle）", "type": "string", "maxLength": 160 },
+    "formIntro": {
+      "displayName": "表单介绍（formIntro）", "type": "text", "maxLength": 500 },
     "seo": {
+      "displayName": "搜索引擎优化（seo）",
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"

@@ -9,25 +9,30 @@
   "options": {},
   "attributes": {
     "metaTitle": {
+      "displayName": "SEO标题（metaTitle）",
       "type": "string",
       "required": true
     },
     "metaDescription": {
+      "displayName": "SEO描述（metaDescription）",
       "type": "text",
       "required": true
     },
     "shareImage": {
+      "displayName": "分享图片（shareImage）",
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"]
     },
     "shareImageAlt": {
+      "displayName": "分享图片替代文本（shareImageAlt）",
       "type": "string",
       "required": false,
       "maxLength": 160
     },
     "canonicalUrl": {
+      "displayName": "规范链接（canonicalUrl）",
       "type": "string",
       "required": false,
       "maxLength": 500

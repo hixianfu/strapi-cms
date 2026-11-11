@@ -4,6 +4,7 @@
   "options": {},
   "attributes": {
     "slides": {
+      "displayName": "幻灯片（slides）",
       "type": "component",
       "repeatable": true,
       "required": true,

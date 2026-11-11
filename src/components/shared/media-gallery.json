@@ -3,8 +3,10 @@
   "info": { "displayName": "媒体画廊", "icon": "landscape" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "maxLength": 160 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "maxLength": 160 },
     "images": {
+      "displayName": "图片（images）",
       "type": "media",
       "multiple": true,
       "required": true,
@@ -12,6 +14,7 @@
       "min": 1,
       "max": 20
     },
-    "altText": { "type": "string", "required": true, "maxLength": 160 }
+    "altText": {
+      "displayName": "替代文本（altText）", "type": "string", "required": true, "maxLength": 160 }
   }
 }

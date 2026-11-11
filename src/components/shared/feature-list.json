@@ -3,9 +3,12 @@
   "info": { "displayName": "功能列表", "icon": "bulletList" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "required": true, "maxLength": 160 },
-    "description": { "type": "text", "maxLength": 500 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "required": true, "maxLength": 160 },
+    "description": {
+      "displayName": "描述（description）", "type": "text", "maxLength": 500 },
     "items": {
+      "displayName": "项目（items）",
       "type": "component",
       "repeatable": true,
       "required": true,

@@ -3,8 +3,11 @@
   "info": { "displayName": "Navigation item", "icon": "link" },
   "options": {},
   "attributes": {
-    "label": { "type": "string", "required": true, "maxLength": 80 },
-    "url": { "type": "string", "required": true, "maxLength": 500 },
-    "openInNewTab": { "type": "boolean", "default": false }
+    "label": {
+      "displayName": "标签（label）", "type": "string", "required": true, "maxLength": 80 },
+    "url": {
+      "displayName": "网址（url）", "type": "string", "required": true, "maxLength": 500 },
+    "openInNewTab": {
+      "displayName": "在新窗口打开（openInNewTab）", "type": "boolean", "default": false }
   }
 }

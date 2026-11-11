@@ -8,6 +8,7 @@
   "options": {},
   "attributes": {
     "files": {
+      "displayName": "媒体文件（files）",
       "type": "media",
       "multiple": true,
       "required": false,

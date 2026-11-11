@@ -8,22 +8,26 @@
   "options": {},
   "attributes": {
     "title": {
+      "displayName": "标题（title）",
       "type": "string",
       "required": true,
       "maxLength": 160
     },
     "kind": {
+      "displayName": "类型（kind）",
       "type": "enumeration",
       "enum": ["promotional", "operation", "maintenance", "other"],
       "default": "promotional",
       "required": true
     },
     "description": {
+      "displayName": "描述（description）",
       "type": "text",
       "required": false,
       "maxLength": 500
     },
     "video": {
+      "displayName": "视频（video）",
       "type": "media",
       "multiple": false,
       "required": true,

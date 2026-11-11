@@ -7,9 +7,11 @@
   "options": {},
   "attributes": {
     "title": {
+      "displayName": "标题（title）",
       "type": "string"
     },
     "body": {
+      "displayName": "正文（body）",
       "type": "text"
     }
   }

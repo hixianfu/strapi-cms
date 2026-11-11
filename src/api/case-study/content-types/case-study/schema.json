@@ -11,59 +11,79 @@
   "pluginOptions": {},
   "attributes": {
     "contentLocale": {
+      "displayName": "内容语言（contentLocale）",
       "type": "enumeration",
       "enum": ["zh", "en"],
       "default": "zh",
       "required": true
     },
-    "title": { "type": "string", "required": true, "maxLength": 160 },
-    "slug": { "type": "uid", "targetField": "title", "required": true },
-    "summary": { "type": "text", "required": true, "maxLength": 500 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "required": true, "maxLength": 160 },
+    "slug": {
+      "displayName": "网址别名（slug）", "type": "uid", "targetField": "title", "required": true },
+    "summary": {
+      "displayName": "摘要（summary）", "type": "text", "required": true, "maxLength": 500 },
     "category": {
+      "displayName": "分类（category）",
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::case-category.case-category",
       "inversedBy": "cases"
     },
-    "industry": { "type": "string", "maxLength": 120 },
-    "customerProblem": { "type": "text", "maxLength": 2000 },
-    "originalPackaging": { "type": "text", "maxLength": 2000 },
-    "solution": { "type": "richtext" },
-    "results": { "type": "text", "maxLength": 2000 },
-    "cover": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "industry": {
+      "displayName": "所属行业（industry）", "type": "string", "maxLength": 120 },
+    "customerProblem": {
+      "displayName": "客户问题（customerProblem）", "type": "text", "maxLength": 2000 },
+    "originalPackaging": {
+      "displayName": "原有包装（originalPackaging）", "type": "text", "maxLength": 2000 },
+    "solution": {
+      "displayName": "解决方案（solution）", "type": "richtext" },
+    "results": {
+      "displayName": "实施效果（results）", "type": "text", "maxLength": 2000 },
+    "cover": {
+      "displayName": "封面图片（cover）", "type": "media", "multiple": false, "allowedTypes": ["images"] },
     "gallery": {
+      "displayName": "图片集（gallery）",
       "type": "media",
       "multiple": true,
       "allowedTypes": ["images", "videos"]
     },
     "products": {
+      "displayName": "关联产品（products）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::product.product"
     },
     "solutions": {
+      "displayName": "关联解决方案（solutions）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::solution.solution"
     },
     "scenarios": {
+      "displayName": "关联应用场景（scenarios）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::scenario.scenario"
     },
     "videos": {
+      "displayName": "相关视频（videos）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::video.video"
     },
     "articles": {
+      "displayName": "相关文章（articles）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::article.article"
     },
-    "sortOrder": { "type": "integer", "default": 0, "min": 0 },
-    "featured": { "type": "boolean", "default": false },
+    "sortOrder": {
+      "displayName": "排序（sortOrder）", "type": "integer", "default": 0, "min": 0 },
+    "featured": {
+      "displayName": "设为推荐（featured）", "type": "boolean", "default": false },
     "seo": {
+      "displayName": "搜索引擎优化（seo）",
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"

@@ -3,8 +3,10 @@
   "info": { "displayName": "首页文章", "icon": "file" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "maxLength": 160 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "maxLength": 160 },
     "articles": {
+      "displayName": "相关文章（articles）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::article.article"

@@ -8,6 +8,7 @@
   "options": {},
   "attributes": {
     "body": {
+      "displayName": "正文（body）",
       "type": "richtext"
     }
   }

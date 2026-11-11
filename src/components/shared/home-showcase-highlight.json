@@ -3,6 +3,7 @@
   "info": { "displayName": "首页亮点", "icon": "check" },
   "options": {},
   "attributes": {
-    "text": { "type": "string", "required": true, "maxLength": 220 }
+    "text": {
+      "displayName": "文字（text）", "type": "string", "required": true, "maxLength": 220 }
   }
 }

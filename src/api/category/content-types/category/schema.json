@@ -13,24 +13,29 @@
   "pluginOptions": {},
   "attributes": {
     "contentLocale": {
+      "displayName": "内容语言（contentLocale）",
       "type": "enumeration",
       "enum": ["zh", "en"],
       "default": "zh",
       "required": true
     },
     "name": {
+      "displayName": "名称（name）",
       "type": "string"
     },
     "slug": {
+      "displayName": "网址别名（slug）",
       "type": "uid"
     },
     "articles": {
+      "displayName": "相关文章（articles）",
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article",
       "mappedBy": "category"
     },
     "description": {
+      "displayName": "描述（description）",
       "type": "text"
     }
   }

@@ -13,19 +13,24 @@
   "pluginOptions": {},
   "attributes": {
     "contentLocale": {
+      "displayName": "内容语言（contentLocale）",
       "type": "enumeration",
       "enum": ["zh", "en"],
       "default": "zh",
       "required": true
     },
     "title": {
+      "displayName": "标题（title）",
       "type": "string",
       "required": true,
       "maxLength": 160
     },
-    "cover": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
-    "coverAlt": { "type": "string", "maxLength": 160 },
+    "cover": {
+      "displayName": "封面图片（cover）", "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "coverAlt": {
+      "displayName": "封面图片替代文本（coverAlt）", "type": "string", "maxLength": 160 },
     "blocks": {
+      "displayName": "内容区块（blocks）",
       "type": "dynamiczone",
       "components": [
         "shared.media",
@@ -39,6 +44,7 @@
       ]
     },
     "seo": {
+      "displayName": "搜索引擎优化（seo）",
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"

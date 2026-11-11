@@ -3,8 +3,10 @@
   "info": { "displayName": "首页应用场景", "icon": "apps" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "maxLength": 160 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "maxLength": 160 },
     "scenarios": {
+      "displayName": "关联应用场景（scenarios）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::scenario.scenario"

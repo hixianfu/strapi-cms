@@ -3,11 +3,17 @@
   "info": { "displayName": "Call to action", "icon": "arrowRight" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "required": true, "maxLength": 160 },
-    "description": { "type": "text", "maxLength": 500 },
-    "label": { "type": "string", "required": true, "maxLength": 80 },
-    "url": { "type": "string", "required": true, "maxLength": 500 },
-    "image": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
-    "imageAlt": { "type": "string", "maxLength": 160 }
+    "title": {
+      "displayName": "标题（title）", "type": "string", "required": true, "maxLength": 160 },
+    "description": {
+      "displayName": "描述（description）", "type": "text", "maxLength": 500 },
+    "label": {
+      "displayName": "标签（label）", "type": "string", "required": true, "maxLength": 80 },
+    "url": {
+      "displayName": "网址（url）", "type": "string", "required": true, "maxLength": 500 },
+    "image": {
+      "displayName": "图片（image）", "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "imageAlt": {
+      "displayName": "图片替代文本（imageAlt）", "type": "string", "maxLength": 160 }
   }
 }

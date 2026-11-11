@@ -3,8 +3,11 @@
   "info": { "displayName": "功能项", "icon": "star" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "required": true, "maxLength": 120 },
-    "description": { "type": "text", "maxLength": 400 },
-    "icon": { "type": "string", "maxLength": 80 }
+    "title": {
+      "displayName": "标题（title）", "type": "string", "required": true, "maxLength": 120 },
+    "description": {
+      "displayName": "描述（description）", "type": "text", "maxLength": 400 },
+    "icon": {
+      "displayName": "图标（icon）", "type": "string", "maxLength": 80 }
   }
 }

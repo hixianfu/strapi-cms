@@ -3,14 +3,18 @@
   "info": { "displayName": "首页公司优势", "icon": "check" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "required": true, "maxLength": 120 },
-    "description": { "type": "text", "required": true, "maxLength": 600 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "required": true, "maxLength": 120 },
+    "description": {
+      "displayName": "描述（description）", "type": "text", "required": true, "maxLength": 600 },
     "icon": {
+      "displayName": "图标（icon）",
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": ["images"]
     },
-    "iconAlt": { "type": "string", "maxLength": 160 }
+    "iconAlt": {
+      "displayName": "图标替代文本（iconAlt）", "type": "string", "maxLength": 160 }
   }
 }

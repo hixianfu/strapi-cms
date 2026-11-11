@@ -11,33 +11,38 @@
   "pluginOptions": {},
   "attributes": {
     "contentLocale": {
+      "displayName": "内容语言（contentLocale）",
       "type": "enumeration",
       "enum": ["zh", "en"],
       "default": "zh",
       "required": true
     },
-    "name": { "type": "string", "required": true, "maxLength": 120 },
-    "slug": { "type": "uid", "targetField": "name", "required": true },
-    "description": { "type": "text", "maxLength": 500 },
+    "name": { "displayName": "名称（name）", "type": "string", "required": true, "maxLength": 120 },
+    "slug": { "displayName": "网址别名（slug）", "type": "uid", "targetField": "name", "required": true },
+    "description": { "displayName": "分类说明（description）", "type": "text", "maxLength": 500 },
     "sortOrder": {
+      "displayName": "排序（sortOrder）",
       "type": "integer",
       "default": 0,
       "min": 0,
       "max": 2147483647
     },
     "products": {
+      "displayName": "所属产品（products）",
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product.product",
       "mappedBy": "category"
     },
     "parent": {
+      "displayName": "上级分类（parent）",
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::product-category.product-category",
       "inversedBy": "children"
     },
     "children": {
+      "displayName": "子分类（children）",
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product-category.product-category",

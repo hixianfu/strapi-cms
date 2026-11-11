@@ -3,8 +3,10 @@
   "info": { "displayName": "首页合作伙伴", "icon": "handHeart" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "maxLength": 160 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "maxLength": 160 },
     "partners": {
+      "displayName": "合作伙伴（partners）",
       "type": "component",
       "repeatable": true,
       "component": "shared.home-partner-item",

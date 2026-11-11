@@ -3,8 +3,10 @@
   "info": { "displayName": "首页文章分类展示", "icon": "newspaper" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "required": true, "maxLength": 160 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "required": true, "maxLength": 160 },
     "groups": {
+      "displayName": "分类组（groups）",
       "type": "component",
       "repeatable": true,
       "component": "shared.home-article-category-group",

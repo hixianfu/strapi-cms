@@ -3,35 +3,44 @@
   "info": { "displayName": "首页功能卡片", "icon": "star" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "required": true, "maxLength": 160 },
-    "description": { "type": "text", "maxLength": 500 },
-    "image": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "required": true, "maxLength": 160 },
+    "description": {
+      "displayName": "描述（description）", "type": "text", "maxLength": 500 },
+    "image": {
+      "displayName": "图片（image）", "type": "media", "multiple": false, "allowedTypes": ["images"] },
     "targetType": {
+      "displayName": "目标类型（targetType）",
       "type": "enumeration",
       "required": true,
       "enum": ["product", "article", "solution", "scenario", "case"]
     },
     "product": {
+      "displayName": "产品（product）",
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::product.product"
     },
     "article": {
+      "displayName": "文章（article）",
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::article.article"
     },
     "solution": {
+      "displayName": "解决方案（solution）",
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::solution.solution"
     },
     "scenario": {
+      "displayName": "应用场景（scenario）",
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::scenario.scenario"
     },
     "case": {
+      "displayName": "客户案例（case）",
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::case-study.case-study"

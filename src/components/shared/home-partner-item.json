@@ -3,15 +3,20 @@
   "info": { "displayName": "合作伙伴", "icon": "picture" },
   "options": {},
   "attributes": {
-    "name": { "type": "string", "required": true, "maxLength": 120 },
+    "name": {
+      "displayName": "名称（name）", "type": "string", "required": true, "maxLength": 120 },
     "image": {
+      "displayName": "图片（image）",
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": ["images"]
     },
-    "imageAlt": { "type": "string", "maxLength": 160 },
-    "href": { "type": "string", "required": true, "maxLength": 500 },
-    "openInNewTab": { "type": "boolean", "default": true }
+    "imageAlt": {
+      "displayName": "图片替代文本（imageAlt）", "type": "string", "maxLength": 160 },
+    "href": {
+      "displayName": "链接地址（href）", "type": "string", "required": true, "maxLength": 500 },
+    "openInNewTab": {
+      "displayName": "在新窗口打开（openInNewTab）", "type": "boolean", "default": true }
   }
 }

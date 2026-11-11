@@ -3,8 +3,10 @@
   "info": { "displayName": "首页客户案例", "icon": "chartBubble" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "maxLength": 160 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "maxLength": 160 },
     "cases": {
+      "displayName": "关联客户案例（cases）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::case-study.case-study"

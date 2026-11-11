@@ -3,14 +3,17 @@
   "info": { "displayName": "首页文章分类组", "icon": "folder" },
   "options": {},
   "attributes": {
-    "label": { "type": "string", "maxLength": 120 },
+    "label": {
+      "displayName": "标签（label）", "type": "string", "maxLength": 120 },
     "category": {
+      "displayName": "分类（category）",
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::category.category",
       "required": true
     },
     "articles": {
+      "displayName": "相关文章（articles）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::article.article"

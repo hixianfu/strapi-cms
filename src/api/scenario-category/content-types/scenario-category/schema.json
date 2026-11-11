@@ -11,16 +11,22 @@
   "pluginOptions": {},
   "attributes": {
     "contentLocale": {
+      "displayName": "内容语言（contentLocale）",
       "type": "enumeration",
       "enum": ["zh", "en"],
       "default": "zh",
       "required": true
     },
-    "name": { "type": "string", "required": true, "maxLength": 120 },
-    "slug": { "type": "uid", "targetField": "name", "required": true },
-    "description": { "type": "text", "maxLength": 500 },
-    "sortOrder": { "type": "integer", "default": 0, "min": 0 },
+    "name": {
+      "displayName": "名称（name）", "type": "string", "required": true, "maxLength": 120 },
+    "slug": {
+      "displayName": "网址别名（slug）", "type": "uid", "targetField": "name", "required": true },
+    "description": {
+      "displayName": "描述（description）", "type": "text", "maxLength": 500 },
+    "sortOrder": {
+      "displayName": "排序（sortOrder）", "type": "integer", "default": 0, "min": 0 },
     "scenarios": {
+      "displayName": "关联应用场景（scenarios）",
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::scenario.scenario",

@@ -3,21 +3,27 @@
   "info": { "displayName": "首页解决方案", "icon": "briefcase" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "maxLength": 160 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "maxLength": 160 },
     "backgroundImage": {
+      "displayName": "背景图片（backgroundImage）",
       "type": "media",
       "multiple": false,
       "allowedTypes": ["images"]
     },
-    "imageAlt": { "type": "string", "maxLength": 160 },
-    "buttonLabel": { "type": "string", "maxLength": 80 },
+    "imageAlt": {
+      "displayName": "图片替代文本（imageAlt）", "type": "string", "maxLength": 160 },
+    "buttonLabel": {
+      "displayName": "按钮文字（buttonLabel）", "type": "string", "maxLength": 80 },
     "entries": {
+      "displayName": "条目（entries）",
       "type": "component",
       "repeatable": true,
       "component": "shared.home-solution-entry",
       "max": 8
     },
     "solutions": {
+      "displayName": "关联解决方案（solutions）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::solution.solution"

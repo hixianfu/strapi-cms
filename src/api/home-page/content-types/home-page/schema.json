@@ -10,9 +10,12 @@
   "options": { "draftAndPublish": true },
   "pluginOptions": {},
   "attributes": {
-    "introTitle": { "type": "string", "maxLength": 160 },
-    "intro": { "type": "text", "maxLength": 1000 },
+    "introTitle": {
+      "displayName": "介绍标题（introTitle）", "type": "string", "maxLength": 160 },
+    "intro": {
+      "displayName": "介绍内容（intro）", "type": "text", "maxLength": 1000 },
     "sections": {
+      "displayName": "页面区块（sections）",
       "type": "dynamiczone",
       "components": [
         "shared.home-hero",
@@ -32,11 +35,13 @@
       "max": 12
     },
     "cta": {
+      "displayName": "行动引导（cta）",
       "type": "component",
       "repeatable": false,
       "component": "shared.cta"
     },
     "seo": {
+      "displayName": "搜索引擎优化（seo）",
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"

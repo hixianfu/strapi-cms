@@ -3,8 +3,10 @@
   "info": { "displayName": "首页视频中心", "icon": "video" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "maxLength": 160 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "maxLength": 160 },
     "videos": {
+      "displayName": "相关视频（videos）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::video.video"

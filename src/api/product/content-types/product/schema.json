@@ -11,16 +11,18 @@
   "pluginOptions": {},
   "attributes": {
     "contentLocale": {
+      "displayName": "内容语言（contentLocale）",
       "type": "enumeration",
       "enum": ["zh", "en"],
       "default": "zh",
       "required": true
     },
-    "name": { "type": "string", "required": true, "maxLength": 160 },
-    "slug": { "type": "uid", "targetField": "name", "required": true },
-    "summary": { "type": "text", "required": true, "maxLength": 500 },
-    "details": { "type": "richtext", "required": false },
+    "name": { "displayName": "名称（name）", "type": "string", "required": true, "maxLength": 160 },
+    "slug": { "displayName": "网址别名（slug）", "type": "uid", "targetField": "name", "required": true },
+    "summary": { "displayName": "摘要（summary）", "type": "text", "required": true, "maxLength": 500 },
+    "details": { "displayName": "详细介绍（details）", "type": "richtext", "required": false },
     "blocks": {
+      "displayName": "内容区块（blocks）",
       "type": "dynamiczone",
       "components": [
         "shared.rich-text",
@@ -30,79 +32,93 @@
       ]
     },
     "cover": {
+      "displayName": "封面图片（cover）",
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": ["images"]
     },
     "gallery": {
+      "displayName": "图片集（gallery）",
       "type": "media",
       "multiple": true,
       "required": false,
       "allowedTypes": ["images"]
     },
     "videos": {
+      "displayName": "视频（videos）",
       "type": "media",
       "multiple": true,
       "required": false,
       "allowedTypes": ["videos"]
     },
     "productVideos": {
+      "displayName": "产品视频（productVideos）",
       "type": "component",
       "repeatable": true,
       "component": "shared.product-video"
     },
     "specifications": {
+      "displayName": "产品规格（specifications）",
       "type": "component",
       "repeatable": true,
       "component": "shared.specification"
     },
     "documents": {
+      "displayName": "相关文档（documents）",
       "type": "media",
       "multiple": true,
       "required": false,
       "allowedTypes": ["files"]
     },
     "category": {
+      "displayName": "产品分类（category）",
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::product-category.product-category",
       "inversedBy": "products"
     },
     "articles": {
+      "displayName": "相关文章（articles）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::article.article",
       "mappedBy": "products"
     },
     "solutions": {
+      "displayName": "相关解决方案（solutions）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::solution.solution"
     },
     "scenarios": {
+      "displayName": "相关应用场景（scenarios）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::scenario.scenario"
     },
     "cases": {
+      "displayName": "相关客户案例（cases）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::case-study.case-study"
     },
     "faqs": {
+      "displayName": "常见问题（faqs）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::faq.faq"
     },
     "sortOrder": {
+      "displayName": "排序（sortOrder）",
       "type": "integer",
       "default": 0,
       "min": 0,
       "max": 2147483647
     },
-    "featured": { "type": "boolean", "default": false },
+    "featured": { "displayName": "设为推荐（featured）", "type": "boolean", "default": false },
     "seo": {
+      "displayName": "搜索引擎优化（seo）",
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"

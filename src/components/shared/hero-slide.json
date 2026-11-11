@@ -7,21 +7,29 @@
   },
   "options": {},
   "attributes": {
-    "eyebrow": { "type": "string", "maxLength": 80 },
-    "title": { "type": "string", "maxLength": 160 },
-    "description": { "type": "text", "maxLength": 500 },
+    "eyebrow": {
+      "displayName": "眉题（eyebrow）", "type": "string", "maxLength": 80 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "maxLength": 160 },
+    "description": {
+      "displayName": "描述（description）", "type": "text", "maxLength": 500 },
     "image": {
+      "displayName": "图片（image）",
       "type": "media",
       "multiple": false,
       "allowedTypes": ["images"]
     },
     "video": {
+      "displayName": "视频（video）",
       "type": "media",
       "multiple": false,
       "allowedTypes": ["videos"]
     },
-    "imageAlt": { "type": "string", "maxLength": 160 },
-    "linkLabel": { "type": "string", "maxLength": 80 },
-    "linkUrl": { "type": "string", "maxLength": 500 }
+    "imageAlt": {
+      "displayName": "图片替代文本（imageAlt）", "type": "string", "maxLength": 160 },
+    "linkLabel": {
+      "displayName": "链接文字（linkLabel）", "type": "string", "maxLength": 80 },
+    "linkUrl": {
+      "displayName": "链接地址（linkUrl）", "type": "string", "maxLength": 500 }
   }
 }

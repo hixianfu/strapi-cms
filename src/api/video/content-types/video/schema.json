@@ -5,21 +5,37 @@
   "options": { "draftAndPublish": true },
   "pluginOptions": {},
   "attributes": {
-    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
-    "title": { "type": "string", "required": true, "maxLength": 160 },
-    "slug": { "type": "uid", "targetField": "title", "required": true },
-    "description": { "type": "text", "maxLength": 500 },
-    "category": { "type": "enumeration", "enum": ["promotional", "introduction", "operation", "installation", "tutorial", "commissioning", "maintenance", "application", "factory", "company"], "default": "promotional", "required": true },
-    "cover": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
-    "file": { "type": "media", "multiple": false, "allowedTypes": ["videos"] },
-    "externalUrl": { "type": "string", "maxLength": 1000 },
-    "products": { "type": "relation", "relation": "manyToMany", "target": "api::product.product" },
-    "solutions": { "type": "relation", "relation": "manyToMany", "target": "api::solution.solution" },
-    "scenarios": { "type": "relation", "relation": "manyToMany", "target": "api::scenario.scenario" },
-    "cases": { "type": "relation", "relation": "manyToMany", "target": "api::case-study.case-study" },
-    "articles": { "type": "relation", "relation": "manyToMany", "target": "api::article.article" },
-    "sortOrder": { "type": "integer", "default": 0, "min": 0 },
-    "featured": { "type": "boolean", "default": false },
-    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
+    "contentLocale": {
+      "displayName": "内容语言（contentLocale）", "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "required": true, "maxLength": 160 },
+    "slug": {
+      "displayName": "网址别名（slug）", "type": "uid", "targetField": "title", "required": true },
+    "description": {
+      "displayName": "描述（description）", "type": "text", "maxLength": 500 },
+    "category": {
+      "displayName": "分类（category）", "type": "enumeration", "enum": ["promotional", "introduction", "operation", "installation", "tutorial", "commissioning", "maintenance", "application", "factory", "company"], "default": "promotional", "required": true },
+    "cover": {
+      "displayName": "封面图片（cover）", "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "file": {
+      "displayName": "文件（file）", "type": "media", "multiple": false, "allowedTypes": ["videos"] },
+    "externalUrl": {
+      "displayName": "外部链接（externalUrl）", "type": "string", "maxLength": 1000 },
+    "products": {
+      "displayName": "关联产品（products）", "type": "relation", "relation": "manyToMany", "target": "api::product.product" },
+    "solutions": {
+      "displayName": "关联解决方案（solutions）", "type": "relation", "relation": "manyToMany", "target": "api::solution.solution" },
+    "scenarios": {
+      "displayName": "关联应用场景（scenarios）", "type": "relation", "relation": "manyToMany", "target": "api::scenario.scenario" },
+    "cases": {
+      "displayName": "关联客户案例（cases）", "type": "relation", "relation": "manyToMany", "target": "api::case-study.case-study" },
+    "articles": {
+      "displayName": "相关文章（articles）", "type": "relation", "relation": "manyToMany", "target": "api::article.article" },
+    "sortOrder": {
+      "displayName": "排序（sortOrder）", "type": "integer", "default": 0, "min": 0 },
+    "featured": {
+      "displayName": "设为推荐（featured）", "type": "boolean", "default": false },
+    "seo": {
+      "displayName": "搜索引擎优化（seo）", "type": "component", "repeatable": false, "component": "shared.seo" }
   }
 }

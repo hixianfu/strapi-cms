@@ -5,15 +5,25 @@
   "options": { "draftAndPublish": true },
   "pluginOptions": {},
   "attributes": {
-    "contentLocale": { "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
-    "question": { "type": "string", "required": true, "maxLength": 300 },
-    "slug": { "type": "uid", "targetField": "question", "required": true },
-    "answer": { "type": "richtext", "required": true },
-    "category": { "type": "enumeration", "enum": ["product", "solution", "usage", "service", "other"], "default": "product", "required": true },
-    "products": { "type": "relation", "relation": "manyToMany", "target": "api::product.product" },
-    "solutions": { "type": "relation", "relation": "manyToMany", "target": "api::solution.solution" },
-    "sortOrder": { "type": "integer", "default": 0, "min": 0 },
-    "featured": { "type": "boolean", "default": false },
-    "seo": { "type": "component", "repeatable": false, "component": "shared.seo" }
+    "contentLocale": {
+      "displayName": "内容语言（contentLocale）", "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true },
+    "question": {
+      "displayName": "问题（question）", "type": "string", "required": true, "maxLength": 300 },
+    "slug": {
+      "displayName": "网址别名（slug）", "type": "uid", "targetField": "question", "required": true },
+    "answer": {
+      "displayName": "回答（answer）", "type": "richtext", "required": true },
+    "category": {
+      "displayName": "分类（category）", "type": "enumeration", "enum": ["product", "solution", "usage", "service", "other"], "default": "product", "required": true },
+    "products": {
+      "displayName": "关联产品（products）", "type": "relation", "relation": "manyToMany", "target": "api::product.product" },
+    "solutions": {
+      "displayName": "关联解决方案（solutions）", "type": "relation", "relation": "manyToMany", "target": "api::solution.solution" },
+    "sortOrder": {
+      "displayName": "排序（sortOrder）", "type": "integer", "default": 0, "min": 0 },
+    "featured": {
+      "displayName": "设为推荐（featured）", "type": "boolean", "default": false },
+    "seo": {
+      "displayName": "搜索引擎优化（seo）", "type": "component", "repeatable": false, "component": "shared.seo" }
   }
 }

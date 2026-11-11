@@ -13,57 +13,75 @@
   "pluginOptions": {},
   "attributes": {
     "siteName": {
+      "displayName": "网站名称（siteName）",
       "type": "string",
       "required": true
     },
     "favicon": {
+      "displayName": "网站图标（favicon）",
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": ["images", "files", "videos"]
     },
     "logo": {
+      "displayName": "网站标志（logo）",
       "type": "media",
       "multiple": false,
       "allowedTypes": ["images"]
     },
-    "logoAlt": { "type": "string", "maxLength": 160 },
+    "logoAlt": {
+      "displayName": "网站标志替代文本（logoAlt）", "type": "string", "maxLength": 160 },
     "siteDescription": {
+      "displayName": "网站描述（siteDescription）",
       "type": "text",
       "required": true
     },
     "defaultSeo": {
+      "displayName": "默认搜索引擎优化（defaultSeo）",
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
     },
     "navigation": {
+      "displayName": "导航菜单（navigation）",
       "type": "component",
       "repeatable": true,
       "component": "shared.navigation-item",
       "max": 12
     },
-    "footerText": { "type": "text", "maxLength": 1000 },
-    "footerBusinessPhone": { "type": "string", "maxLength": 80 },
-    "footerProductPhone": { "type": "string", "maxLength": 80 },
-    "footerAfterSalesPhone": { "type": "string", "maxLength": 80 },
-    "footerWechat": { "type": "string", "maxLength": 120 },
-    "footerEmail": { "type": "email", "maxLength": 160 },
+    "footerText": {
+      "displayName": "页脚文字（footerText）", "type": "text", "maxLength": 1000 },
+    "footerBusinessPhone": {
+      "displayName": "商务电话（footerBusinessPhone）", "type": "string", "maxLength": 80 },
+    "footerProductPhone": {
+      "displayName": "产品咨询电话（footerProductPhone）", "type": "string", "maxLength": 80 },
+    "footerAfterSalesPhone": {
+      "displayName": "售后服务电话（footerAfterSalesPhone）", "type": "string", "maxLength": 80 },
+    "footerWechat": {
+      "displayName": "微信号（footerWechat）", "type": "string", "maxLength": 120 },
+    "footerEmail": {
+      "displayName": "联系邮箱（footerEmail）", "type": "email", "maxLength": 160 },
     "footerQrCode": {
+      "displayName": "页脚二维码（footerQrCode）",
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"]
     },
-    "footerQrCodeAlt": { "type": "string", "maxLength": 160 },
-    "footerQrCodeLabel": { "type": "string", "maxLength": 120 },
+    "footerQrCodeAlt": {
+      "displayName": "二维码替代文本（footerQrCodeAlt）", "type": "string", "maxLength": 160 },
+    "footerQrCodeLabel": {
+      "displayName": "二维码说明（footerQrCodeLabel）", "type": "string", "maxLength": 120 },
     "footerLinks": {
+      "displayName": "页脚链接（footerLinks）",
       "type": "component",
       "repeatable": true,
       "component": "shared.navigation-item",
       "max": 20
     },
     "socialLinks": {
+      "displayName": "社交媒体链接（socialLinks）",
       "type": "component",
       "repeatable": true,
       "component": "shared.social-link",

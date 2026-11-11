@@ -3,10 +3,15 @@
   "info": { "displayName": "Timeline item", "icon": "clock" },
   "options": {},
   "attributes": {
-    "date": { "type": "date", "required": true },
-    "title": { "type": "string", "required": true, "maxLength": 160 },
-    "description": { "type": "text", "maxLength": 500 },
-    "image": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
-    "imageAlt": { "type": "string", "maxLength": 160 }
+    "date": {
+      "displayName": "日期（date）", "type": "date", "required": true },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "required": true, "maxLength": 160 },
+    "description": {
+      "displayName": "描述（description）", "type": "text", "maxLength": 500 },
+    "image": {
+      "displayName": "图片（image）", "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "imageAlt": {
+      "displayName": "图片替代文本（imageAlt）", "type": "string", "maxLength": 160 }
   }
 }

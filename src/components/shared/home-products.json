@@ -3,13 +3,16 @@
   "info": { "displayName": "首页产品", "icon": "cube" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "maxLength": 160 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "maxLength": 160 },
     "categories": {
+      "displayName": "分类列表（categories）",
       "type": "component",
       "repeatable": true,
       "component": "shared.home-product-category"
     },
     "products": {
+      "displayName": "关联产品（products）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::product.product"

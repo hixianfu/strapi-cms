@@ -10,13 +10,20 @@
   "options": { "draftAndPublish": false },
   "pluginOptions": {},
   "attributes": {
-    "name": { "type": "string", "required": true, "maxLength": 120 },
-    "email": { "type": "email", "required": true, "maxLength": 160 },
-    "company": { "type": "string", "maxLength": 160 },
-    "phone": { "type": "string", "maxLength": 80 },
-    "message": { "type": "text", "required": true, "maxLength": 5000 },
-    "sourcePage": { "type": "string", "required": true, "maxLength": 500 },
+    "name": {
+      "displayName": "名称（name）", "type": "string", "required": true, "maxLength": 120 },
+    "email": {
+      "displayName": "电子邮箱（email）", "type": "email", "required": true, "maxLength": 160 },
+    "company": {
+      "displayName": "公司名称（company）", "type": "string", "maxLength": 160 },
+    "phone": {
+      "displayName": "联系电话（phone）", "type": "string", "maxLength": 80 },
+    "message": {
+      "displayName": "留言内容（message）", "type": "text", "required": true, "maxLength": 5000 },
+    "sourcePage": {
+      "displayName": "来源页面（sourcePage）", "type": "string", "required": true, "maxLength": 500 },
     "status": {
+      "displayName": "状态（status）",
       "type": "enumeration",
       "enum": ["pending", "in_progress", "resolved", "spam", "archived"],
       "default": "pending",

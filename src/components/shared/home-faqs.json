@@ -3,8 +3,10 @@
   "info": { "displayName": "首页常见问题", "icon": "question" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "maxLength": 160 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "maxLength": 160 },
     "faqs": {
+      "displayName": "相关常见问题（faqs）",
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::faq.faq"

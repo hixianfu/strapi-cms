@@ -3,9 +3,12 @@
   "info": { "displayName": "首页功能卡片", "icon": "grid" },
   "options": {},
   "attributes": {
-    "title": { "type": "string", "required": true, "maxLength": 160 },
-    "description": { "type": "text", "maxLength": 500 },
+    "title": {
+      "displayName": "标题（title）", "type": "string", "required": true, "maxLength": 160 },
+    "description": {
+      "displayName": "描述（description）", "type": "text", "maxLength": 500 },
     "cards": {
+      "displayName": "卡片（cards）",
       "type": "component",
       "repeatable": true,
       "required": true,
