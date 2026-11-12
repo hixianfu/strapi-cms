@@ -7,6 +7,9 @@
       "displayName": "标签（label）", "type": "string", "required": true, "maxLength": 80 },
     "url": {
       "displayName": "网址（url）", "type": "string", "required": true, "maxLength": 500 },
+    "listingBackground": {
+      "displayName": "栏目 Banner 背景图（listingBackground）",
+      "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"] },
     "openInNewTab": {
       "displayName": "在新窗口打开（openInNewTab）", "type": "boolean", "default": false }
   }

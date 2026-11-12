@@ -14,7 +14,7 @@
     "description": {
       "displayName": "描述（description）", "type": "text", "maxLength": 500 },
     "category": {
-      "displayName": "分类（category）", "type": "enumeration", "enum": ["promotional", "introduction", "operation", "installation", "tutorial", "commissioning", "maintenance", "application", "factory", "company"], "default": "promotional", "required": true },
+      "displayName": "分类（category）", "type": "relation", "relation": "manyToOne", "target": "api::video-category.video-category", "inversedBy": "videos", "required": true },
     "cover": {
       "displayName": "封面图片（cover）", "type": "media", "multiple": false, "allowedTypes": ["images"] },
     "file": {

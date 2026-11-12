@@ -14,7 +14,7 @@
     "answer": {
       "displayName": "回答（answer）", "type": "richtext", "required": true },
     "category": {
-      "displayName": "分类（category）", "type": "enumeration", "enum": ["product", "solution", "usage", "service", "other"], "default": "product", "required": true },
+      "displayName": "分类（category）", "type": "relation", "relation": "manyToOne", "target": "api::faq-category.faq-category", "inversedBy": "faqs", "required": true },
     "products": {
       "displayName": "关联产品（products）", "type": "relation", "relation": "manyToMany", "target": "api::product.product" },
     "solutions": {

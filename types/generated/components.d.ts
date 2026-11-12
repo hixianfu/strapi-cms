@@ -644,6 +644,7 @@ export interface SharedNavigationItem extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 80;
       }>;
+    listingBackground: Schema.Attribute.Media<'images'>;
     openInNewTab: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     url: Schema.Attribute.String &
       Schema.Attribute.Required &

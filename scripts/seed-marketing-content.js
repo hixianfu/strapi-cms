@@ -36,6 +36,17 @@ async function main() {
             console.log(`Skipped ${type}: ${locale}/${slug}`);
             continue;
           }
+          let category;
+          if (definition.category) {
+            const categoryType = `${type}-category`;
+            const categoryService = strapi.documents(`api::${categoryType}.${categoryType}`);
+            const categorySlug = locale === 'zh' ? definition.category : `${definition.category}-en`;
+            category = await categoryService.findFirst({ filters: { slug: categorySlug, contentLocale: locale } });
+            if (!category) category = await categoryService.create({ data: {
+              name: type === 'video' ? (locale === 'zh' ? '企业宣传' : 'Company') : (locale === 'zh' ? '服务' : 'Service'),
+              slug: categorySlug, contentLocale: locale, sortOrder: 0,
+            } });
+          }
           const created = await service.create({
             data: {
               ...localized,
@@ -43,7 +54,7 @@ async function main() {
               contentLocale: locale,
               sortOrder: 1,
               featured: true,
-              ...(definition.category ? { category: definition.category } : {}),
+              ...(category ? { category: category.documentId } : {}),
               publishedAt: new Date().toISOString(),
             },
           });

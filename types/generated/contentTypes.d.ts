@@ -728,7 +728,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
     description: '\u5C06\u6587\u7AE0\u5185\u5BB9\u5F52\u7C7B\u7BA1\u7406\u3002';
-    displayName: '\u5206\u7C7B';
+    displayName: '\u6587\u7AE0\u5206\u7C7B';
     pluralName: 'categories';
     singularName: 'category';
   };
@@ -887,6 +887,48 @@ export interface ApiContactSubmissionContactSubmission
   };
 }
 
+export interface ApiFaqCategoryFaqCategory extends Struct.CollectionTypeSchema {
+  collectionName: 'faq_categories';
+  info: {
+    description: '\u7BA1\u7406\u7B54\u7591\u89E3\u60D1\u83DC\u5355\u5206\u7C7B\u3002';
+    displayName: '\u7B54\u7591\u5206\u7C7B';
+    pluralName: 'faq-categories';
+    singularName: 'faq-category';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    contentLocale: Schema.Attribute.Enumeration<['zh', 'en']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'zh'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqs: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::faq-category.faq-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    sortOrder: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -900,11 +942,11 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   };
   attributes: {
     answer: Schema.Attribute.RichText & Schema.Attribute.Required;
-    category: Schema.Attribute.Enumeration<
-      ['product', 'solution', 'usage', 'service', 'other']
+    category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::faq-category.faq-category'
     > &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'product'>;
+      Schema.Attribute.Required;
     contentLocale: Schema.Attribute.Enumeration<['zh', 'en']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'zh'>;
@@ -1497,6 +1539,49 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiVideoCategoryVideoCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'video_categories';
+  info: {
+    description: '\u7BA1\u7406\u89C6\u9891\u4E2D\u5FC3\u83DC\u5355\u5206\u7C7B\u3002';
+    displayName: '\u89C6\u9891\u5206\u7C7B';
+    pluralName: 'video-categories';
+    singularName: 'video-category';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    contentLocale: Schema.Attribute.Enumeration<['zh', 'en']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'zh'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::video-category.video-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    sortOrder: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    videos: Schema.Attribute.Relation<'oneToMany', 'api::video.video'>;
+  };
+}
+
 export interface ApiVideoVideo extends Struct.CollectionTypeSchema {
   collectionName: 'videos';
   info: {
@@ -1514,22 +1599,11 @@ export interface ApiVideoVideo extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::case-study.case-study'
     >;
-    category: Schema.Attribute.Enumeration<
-      [
-        'promotional',
-        'introduction',
-        'operation',
-        'installation',
-        'tutorial',
-        'commissioning',
-        'maintenance',
-        'application',
-        'factory',
-        'company',
-      ]
+    category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::video-category.video-category'
     > &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'promotional'>;
+      Schema.Attribute.Required;
     contentLocale: Schema.Attribute.Enumeration<['zh', 'en']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'zh'>;
@@ -2100,6 +2174,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::contact-submission.contact-submission': ApiContactSubmissionContactSubmission;
+      'api::faq-category.faq-category': ApiFaqCategoryFaqCategory;
       'api::faq.faq': ApiFaqFaq;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
@@ -2109,6 +2184,7 @@ declare module '@strapi/strapi' {
       'api::scenario.scenario': ApiScenarioScenario;
       'api::solution-category.solution-category': ApiSolutionCategorySolutionCategory;
       'api::solution.solution': ApiSolutionSolution;
+      'api::video-category.video-category': ApiVideoCategoryVideoCategory;
       'api::video.video': ApiVideoVideo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

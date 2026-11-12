@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "video_categories",
+  "info": {
+    "singularName": "video-category",
+    "pluralName": "video-categories",
+    "displayName": "视频分类",
+    "description": "管理视频中心菜单分类。"
+  },
+  "options": { "draftAndPublish": false },
+  "pluginOptions": {},
+  "attributes": {
+    "contentLocale": {
+      "displayName": "内容语言（contentLocale）", "type": "enumeration", "enum": ["zh", "en"], "default": "zh", "required": true
+    },
+    "name": { "displayName": "名称（name）", "type": "string", "required": true },
+    "slug": { "displayName": "网址别名（slug）", "type": "uid", "targetField": "name", "required": true },
+    "sortOrder": { "displayName": "排序（sortOrder）", "type": "integer", "default": 0, "min": 0 },
+    "videos": { "displayName": "视频（videos）", "type": "relation", "relation": "oneToMany", "target": "api::video.video", "mappedBy": "category" }
+  }
+}

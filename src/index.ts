@@ -1,4 +1,5 @@
 import type { Core } from '@strapi/strapi';
+import { migrateContentCategories } from './utils/migrate-content-categories';
 
 export default {
   /**
@@ -17,6 +18,7 @@ export default {
    * run jobs, or perform some special logic.
    */
   async bootstrap({ strapi }: { strapi: Core.Strapi }) {
+    await migrateContentCategories(strapi);
     const contentTypes = strapi.plugin('content-manager').service('content-types') as {
       findConfiguration: (model: { uid: string }) => Promise<any>;
       updateConfiguration: (model: { uid: string }, configuration: any) => Promise<unknown>;

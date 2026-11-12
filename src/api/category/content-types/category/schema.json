@@ -4,7 +4,7 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "分类",
+    "displayName": "文章分类",
     "description": "将文章内容归类管理。"
   },
   "options": {
